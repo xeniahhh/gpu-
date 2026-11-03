@@ -21,7 +21,7 @@ DDP,D19,验证身份、权限及输入边界,P0,C 单人,0.75 小时,仿真验�
 DDP,D20,验证 Assistant 的证据引用,P0,C 主责，A/B 各复核一个解释,0.75 小时,仿真验证通过,evidence/integration_1103/browser_integrated.json,C
 DDP,D21,完善可操作演示界面,P0,C 单人,1.5 小时,仿真验证通过,evidence/integration_1103/browser_integrated.png,C
 DDP,D22,制作架构、数据和状态图,P0,C 主责，A/B 各核对相关边界,1 小时,初稿完成,output/presentation/FabricSandbox_v2_课程汇报_内容重制版_20261103_rev2.pptx,C
-DDP,D23,形成 8–12 页正式报告与答辩材料,P0,C 整理，A/B 各交自己的原始小节,2 小时,初稿完成,docs/refactor/C-task-delivery-20261103.md; output/pdf/FabricSandbox_v2_最终报告_20261103_rev4.pdf; output/presentation/FabricSandbox_v2_课程汇报_内容重制版_20261103_rev2.pptx,C
+DDP,D23,形成 8–12 页正式报告与答辩材料,P0,C 整理，A/B 各交自己的原始小节,2 小时,初稿完成,docs/refactor/C-task-delivery-20261103.md; output/pdf/FabricSandbox_v2_最终报告_20261103_rev5.pdf; output/presentation/FabricSandbox_v2_课程汇报_内容重制版_20261103_rev2.pptx,C
 DDP,D24,干净环境复现与五分钟演示,P0,C 主责，全员验收,1.5 小时,部分完成；待现场录屏,标签 c-delivery-20261103；远程 Git URL 与录屏待团队提供,C
 TP,T01,冻结部署问题和比较口径,P0,A 单人,0.5 小时,待组员核验,,
 TP,T02,核对模型结构与合法切分,P0,A 单人,0.75 小时,待组员核验,,
@@ -45,5 +45,5 @@ TP,T19,核对角色权限与只读边界,P0,C 单人,0.75 小时,仿真验证通
 TP,T20,让 Assistant 解释具体请求和约束,P0,C 主责，A/B 复核,0.75 小时,仿真验证通过,evidence/team_1103_tp/browser_tp_acceptance.json,C
 TP,T21,完善推理场景演示视图,P0,C 单人,1.5 小时,仿真验证通过,evidence/team_1103_tp/browser_tp_acceptance.png,C
 TP,T22,集成负例与资源释放验收,P0,C 主责，A/B 修各自模块,1.5 小时,仿真验证通过,evidence/team_1103_tp/T3_fault,C
-TP,T23,制作图示与正式报告,P0,C 整理，A/B 分别供稿,2 小时,初稿完成,docs/refactor/C-task-delivery-20261103.md; docs/refactor/case2-analysis-20261103.md; output/pdf/FabricSandbox_v2_最终报告_20261103_rev4.pdf,C
+TP,T23,制作图示与正式报告,P0,C 整理，A/B 分别供稿,2 小时,初稿完成,docs/refactor/C-task-delivery-20261103.md; docs/refactor/case2-analysis-20261103.md; output/pdf/FabricSandbox_v2_最终报告_20261103_rev5.pdf,C
 TP,T24,干净环境复现与演示排练,P0,C 主责，全员验收,1.5 小时,部分完成；待现场录屏,标签 c-delivery-20261103；远程 Git URL 与录屏待团队提供,C

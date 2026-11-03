@@ -1,26 +1,17 @@
 {
-  "task": "C",
-  "passed": true,
-  "notes": [
-    "The browser used an editor bearer token supplied only through the page input.",
-    "The token was not persisted to the URL, repository, or evidence file.",
-    "The page uses synthetic simulation inputs; it does not monitor a live GPU."
-  ],
-  "tested_at": "2026-11-03T04:24:33.8575959+00:00",
-  "screenshot": "D:\\App\\vs.code\\ai-infra\\gpu\\FabricSandbox_今晚分工包_一日版\\代码包\\FabricSandbox_v2_重构代码与实验交付\\FabricSandbox_v2\\evidence\\integration_1103\\browser_integrated.png",
-  "browser": "Microsoft Edge 156.0.4314.58 headless",
-  "schema_version": 1,
-  "base_url": "http://127.0.0.1:8002",
   "editor": {
     "title": "FabricSandbox · 工作负载与故障分析",
     "connection": "已连接 · 14 个场景",
     "status": "评估完成",
-    "identity": "sim-6a8a7b2337834735ad84106ec2f905a4 · DDP · 输入 6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea",
+    "identity": "sim-bcee0fb0e8014a4d9e6d3a5cc8f10d9c · DDP · 输入 6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea",
     "metrics": 9,
     "result_rows": 2,
     "timeline_svg": true,
     "resource_svg": true,
     "invariant_checks": 4,
+    "evidence_cards": 3,
+    "evidence_text": "A熊宇琛COMPLETE两张 RTX 3090 的 GPT-2 profile 与梯度 AllReduce 已完成模型与通信语义、真实 GPU 测量、最终技术核验GPT-2 参数：124,439,808FP32 梯度：497,759,232 bytes前向+反向中位数：34.487 msB王忻晔COMPLETE19/19 个仿真情景复现通过，178 项测试通过网络、资源实验、故障分析、规模与敏感性DDP 基线：19/19 PASS自动化测试：178/178 PASS独占 -> 并发：7,137.466 -> 10,721.333 msC马贤纯CORE_VALIDATED真实 HTTP、浏览器、权限、快照和重启验收完成接口、权限、持久化、TP 第二案例、前端与交付验收完整测试：180/180 PASSHTTP 验收：16/16 PASS重启验收：3/3 PASS",
+    "evidence_status": "实现 d8447344 · 3 个来源",
     "explanation": [
       "模拟 3640.444 ms，A：检查点保存完成，可用于恢复 [events[1306]]",
       "模拟 3640.444 ms，B：检查点保存完成，可用于恢复 [events[1308]]",
@@ -30,5 +21,17 @@
       "解释仅引用本次仿真记录；设定时间不是 GPU 实测，不能据此推断真实训练精度或在线迁移能力。"
     ],
     "page_text_contains_replay_boundary": true
-  }
+  },
+  "schema_version": 1,
+  "task": "C",
+  "notes": [
+    "The browser used an editor bearer token supplied only through the page input.",
+    "The token was not persisted to the URL, repository, or evidence file.",
+    "The page uses synthetic simulation inputs; it does not monitor a live GPU."
+  ],
+  "passed": true,
+  "browser": "Microsoft Edge 156.0.4314.58 headless",
+  "screenshot": "D:\\App\\vs.code\\ai-infra\\gpu\\FabricSandbox_今晚分工包_一日版\\代码包\\FabricSandbox_v2_重构代码与实验交付\\FabricSandbox_v2\\evidence\\integration_1103\\browser_integrated.png",
+  "tested_at": "2026-11-03T06:01:21.0232485+00:00",
+  "base_url": "http://127.0.0.1:8002"
 }

@@ -63,7 +63,7 @@
     },
     {
       "id": "B",
-      "name": "马贤纯",
+      "name": "王忻晔",
       "role": "网络、资源实验、故障分析、规模与敏感性",
       "status": "COMPLETE",
       "source_class": "SYNTHETIC",
@@ -120,7 +120,7 @@
     },
     {
       "id": "C",
-      "name": "王忻晔",
+      "name": "马贤纯",
       "role": "接口、权限、持久化、TP 第二案例、前端与交付验收",
       "status": "CORE_VALIDATED",
       "source_class": "HTTP + BROWSER + SYNTHETIC",
