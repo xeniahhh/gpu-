@@ -13,6 +13,7 @@ __pycache__/
 
 # Local tool state and rollback archives
 .codex-finalizer/
+.chart-data-*/
 .pnpm-store/
 backups/
 
