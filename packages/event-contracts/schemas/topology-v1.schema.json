@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fabric-sandbox.local/schemas/topology-v1.schema.json",
+  "title": "Fabric topology v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "spines", "racks", "leaves", "nodes", "links"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "spines": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/spine"}
+    },
+    "racks": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/rack"}
+    },
+    "leaves": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/leaf"}
+    },
+    "nodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/node"}
+    },
+    "links": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/link"}
+    }
+  },
+  "$defs": {
+    "spine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}
+      }
+    },
+    "rack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}
+      }
+    },
+    "leaf": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "rack_id"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "rack_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "gpu": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "slot", "rail_id"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "slot": {"type": "integer", "minimum": 0},
+        "rail_id": {"type": "integer", "minimum": 0}
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "rack_id", "leaf_id", "gpus"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "rack_id": {"type": "string", "minLength": 1},
+        "leaf_id": {"type": "string", "minLength": 1},
+        "power_budget_watts": {"type": "number", "exclusiveMinimum": 0},
+        "gpus": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/gpu"}
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "endpoint_a", "endpoint_b", "capacity_gbps"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["spine_leaf", "leaf_node"]},
+        "endpoint_a": {"type": "string", "minLength": 1},
+        "endpoint_b": {"type": "string", "minLength": 1},
+        "capacity_gbps": {"type": "number", "exclusiveMinimum": 0}
+      }
+    }
+  }
+}

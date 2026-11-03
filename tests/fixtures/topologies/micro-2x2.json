@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "revision_id": "fixture-micro-2x2-v1",
+  "topology": {
+    "id": "micro-2x2",
+    "spines": [
+      {"id": "spine-0"},
+      {"id": "spine-1"}
+    ],
+    "racks": [
+      {"id": "rack-0"},
+      {"id": "rack-1"}
+    ],
+    "leaves": [
+      {"id": "leaf-0", "rack_id": "rack-0"},
+      {"id": "leaf-1", "rack_id": "rack-1"}
+    ],
+    "nodes": [
+      {
+        "id": "node-0",
+        "rack_id": "rack-0",
+        "leaf_id": "leaf-0",
+        "power_budget_watts": 1500.0,
+        "gpus": [
+          {"id": "node-0-gpu-0", "slot": 0, "rail_id": 0},
+          {"id": "node-0-gpu-1", "slot": 1, "rail_id": 1},
+          {"id": "node-0-gpu-2", "slot": 2, "rail_id": 2},
+          {"id": "node-0-gpu-3", "slot": 3, "rail_id": 3}
+        ]
+      },
+      {
+        "id": "node-1",
+        "rack_id": "rack-1",
+        "leaf_id": "leaf-1",
+        "power_budget_watts": 1500.0,
+        "gpus": [
+          {"id": "node-1-gpu-0", "slot": 0, "rail_id": 0},
+          {"id": "node-1-gpu-1", "slot": 1, "rail_id": 1},
+          {"id": "node-1-gpu-2", "slot": 2, "rail_id": 2},
+          {"id": "node-1-gpu-3", "slot": 3, "rail_id": 3}
+        ]
+      }
+    ],
+    "links": [
+      {
+        "id": "spine-0--leaf-0",
+        "kind": "spine_leaf",
+        "endpoint_a": "spine-0",
+        "endpoint_b": "leaf-0",
+        "capacity_gbps": 200.0
+      },
+      {
+        "id": "spine-0--leaf-1",
+        "kind": "spine_leaf",
+        "endpoint_a": "spine-0",
+        "endpoint_b": "leaf-1",
+        "capacity_gbps": 200.0
+      },
+      {
+        "id": "spine-1--leaf-0",
+        "kind": "spine_leaf",
+        "endpoint_a": "spine-1",
+        "endpoint_b": "leaf-0",
+        "capacity_gbps": 200.0
+      },
+      {
+        "id": "spine-1--leaf-1",
+        "kind": "spine_leaf",
+        "endpoint_a": "spine-1",
+        "endpoint_b": "leaf-1",
+        "capacity_gbps": 200.0
+      },
+      {
+        "id": "leaf-0--node-0",
+        "kind": "leaf_node",
+        "endpoint_a": "leaf-0",
+        "endpoint_b": "node-0",
+        "capacity_gbps": 400.0
+      },
+      {
+        "id": "leaf-1--node-1",
+        "kind": "leaf_node",
+        "endpoint_a": "leaf-1",
+        "endpoint_b": "node-1",
+        "capacity_gbps": 400.0
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "job-ring-01",
+      "requested_gpus": 4,
+      "communication_mode": "ring_all_reduce",
+      "priority": 10
+    },
+    {
+      "id": "job-a2a-02",
+      "requested_gpus": 4,
+      "communication_mode": "all_to_all",
+      "priority": 5
+    }
+  ]
+}

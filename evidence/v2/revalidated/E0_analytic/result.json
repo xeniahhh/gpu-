@@ -1,0 +1,1236 @@
+{
+  "schema_version": 2,
+  "scenario": "analytical_ring",
+  "summary": {
+    "expected_ms": 8.05306368,
+    "observed_ms": 8.05306368
+  },
+  "jobs": [
+    {
+      "id": "analytical",
+      "state": "completed",
+      "completion_ms": 8.05306368
+    }
+  ],
+  "events": [
+    {
+      "time_ms": 0.0,
+      "kind": "collective_round_started",
+      "subject_id": "analytical",
+      "phase": "reduce_scatter",
+      "round_index": 0,
+      "chunk_bytes": 16777216,
+      "meta": {}
+    },
+    {
+      "time_ms": 0.0,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-1",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 0.0,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-2",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 0.0,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-3",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 0.0,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-4",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-1",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-2",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-3",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-4",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 0,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "collective_round_completed",
+      "subject_id": "analytical",
+      "phase": "reduce_scatter",
+      "round_index": 0,
+      "meta": {}
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "collective_round_started",
+      "subject_id": "analytical",
+      "phase": "reduce_scatter",
+      "round_index": 1,
+      "chunk_bytes": 16777216,
+      "meta": {}
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-5",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-6",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-7",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 1.34217728,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-8",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-5",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-6",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-7",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-8",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 1,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "collective_round_completed",
+      "subject_id": "analytical",
+      "phase": "reduce_scatter",
+      "round_index": 1,
+      "meta": {}
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "collective_round_started",
+      "subject_id": "analytical",
+      "phase": "reduce_scatter",
+      "round_index": 2,
+      "chunk_bytes": 16777216,
+      "meta": {}
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-9",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-10",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-11",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 2.68435456,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-12",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-9",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-10",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-11",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-12",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "reduce_scatter",
+        "round_index": 2,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "collective_round_completed",
+      "subject_id": "analytical",
+      "phase": "reduce_scatter",
+      "round_index": 2,
+      "meta": {}
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "collective_round_started",
+      "subject_id": "analytical",
+      "phase": "all_gather",
+      "round_index": 0,
+      "chunk_bytes": 16777216,
+      "meta": {}
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-13",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-14",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-15",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 4.0265318400000005,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-16",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-13",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-14",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-15",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-16",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 0,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "collective_round_completed",
+      "subject_id": "analytical",
+      "phase": "all_gather",
+      "round_index": 0,
+      "meta": {}
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "collective_round_started",
+      "subject_id": "analytical",
+      "phase": "all_gather",
+      "round_index": 1,
+      "chunk_bytes": 16777216,
+      "meta": {}
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-17",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-18",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-19",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 5.36870912,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-20",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-17",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-18",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-19",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-20",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 1,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "collective_round_completed",
+      "subject_id": "analytical",
+      "phase": "all_gather",
+      "round_index": 1,
+      "meta": {}
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "collective_round_started",
+      "subject_id": "analytical",
+      "phase": "all_gather",
+      "round_index": 2,
+      "chunk_bytes": 16777216,
+      "meta": {}
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-21",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-22",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-23",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 6.7108864,
+      "kind": "transfer_started",
+      "subject_id": "analytical",
+      "flow_id": "flow-24",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 8.05306368,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-21",
+      "src_gpu": "n0:gpu0",
+      "dst_gpu": "n1:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n0:tx",
+        "node:n1:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 0
+      }
+    },
+    {
+      "time_ms": 8.05306368,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-22",
+      "src_gpu": "n1:gpu0",
+      "dst_gpu": "n2:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n1:tx",
+        "node:n2:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 1
+      }
+    },
+    {
+      "time_ms": 8.05306368,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-23",
+      "src_gpu": "n2:gpu0",
+      "dst_gpu": "n3:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n2:tx",
+        "node:n3:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 2
+      }
+    },
+    {
+      "time_ms": 8.05306368,
+      "kind": "transfer_completed",
+      "subject_id": "analytical",
+      "flow_id": "flow-24",
+      "src_gpu": "n3:gpu0",
+      "dst_gpu": "n0:gpu0",
+      "size_bytes": 16777216,
+      "resource_ids": [
+        "node:n3:tx",
+        "node:n0:rx"
+      ],
+      "meta": {
+        "phase": "all_gather",
+        "round_index": 2,
+        "rank": 3
+      }
+    },
+    {
+      "time_ms": 8.05306368,
+      "kind": "collective_round_completed",
+      "subject_id": "analytical",
+      "phase": "all_gather",
+      "round_index": 2,
+      "meta": {}
+    },
+    {
+      "time_ms": 8.05306368,
+      "kind": "allreduce_completed",
+      "subject_id": "analytical",
+      "ranks": 4,
+      "size_bytes": 67108864,
+      "meta": {}
+    }
+  ],
+  "resource_samples": [
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n0:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n0:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n0:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n1:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n1:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n1:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n2:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n2:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n2:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n3:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n3:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n3:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 100.0,
+      "active_flows": 1
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "rack:r0:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "rack:r0:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n0:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n0:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n0:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n1:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n1:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n1:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n2:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n2:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n2:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n3:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n3:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "node:n3:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "rack:r0:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 8.05306368,
+      "resource_id": "rack:r0:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    }
+  ],
+  "invariant_checks": [
+    {
+      "name": "one_completion",
+      "passed": true,
+      "detail": [
+        8.05306368
+      ]
+    },
+    {
+      "name": "analytic_time",
+      "passed": true,
+      "detail": {
+        "expected_ms": 8.05306368,
+        "observed_ms": 8.05306368
+      }
+    },
+    {
+      "name": "exact_group_bytes",
+      "passed": true,
+      "detail": {
+        "expected_bytes": 402653184,
+        "observed_bytes": 402653184.0
+      }
+    },
+    {
+      "name": "capacity",
+      "passed": true,
+      "detail": 1.0
+    }
+  ],
+  "engine_stats": {
+    "processed_events": 49,
+    "total_sent_bytes": 402653184.0,
+    "completed_transfer_bytes": 402653184,
+    "completed_flows": 24,
+    "cancelled_flows": 0,
+    "pending_flows": 0,
+    "active_flows": 0,
+    "capacity_checks": 98,
+    "max_capacity_ratio": 1.0,
+    "horizon_reached": false,
+    "simulated_time_ms": 8.05306368
+  },
+  "engine_wall_ms": 0.4705830942839384,
+  "assumptions": [
+    "Analytical calibration fixture, not measured GPU performance."
+  ]
+}

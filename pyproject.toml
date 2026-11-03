@@ -1,0 +1,32 @@
+[project]
+name = "fabric-sandbox"
+version = "0.1.0"
+description = "GPU fabric placement and failure replanning sandbox"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "python-dotenv>=1.0,<2.0",
+  "nats-py>=2.10,<3.0",
+  "psycopg[binary]>=3.2,<4.0",
+  "uvicorn[standard]>=0.34,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28,<1.0",
+  "pytest>=8.0,<9.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = [
+  "packages/fabric-domain/src",
+    "packages/fabric-sim/src",
+  "packages/event-contracts/src",
+  "services/gateway/src",
+  "services/planner/src",
+  "services/aggregator/src",
+  "services/evaluator/src",
+]
+

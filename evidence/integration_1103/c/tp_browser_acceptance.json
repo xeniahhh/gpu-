@@ -1,0 +1,31 @@
+{
+  "base_url": "http://127.0.0.1:8767",
+  "schema_version": 1,
+  "passed": true,
+  "browser": "Microsoft Edge 156.0.4314.58 headless",
+  "tested_at": "2026-11-03T03:22:51.3738801+00:00",
+  "task": "C",
+  "notes": [
+    "The browser used an editor bearer token supplied only through the page input.",
+    "The token was not persisted to the URL, repository, or evidence file.",
+    "The page uses synthetic simulation inputs; it does not monitor a live GPU."
+  ],
+  "editor": {
+    "title": "FabricSandbox · 工作负载与故障分析",
+    "connection": "已连接 · 14 个场景",
+    "status": "评估完成",
+    "identity": "sim-f07c1a1eb70e4abb8be5d02ea944466a · TP · 输入 61573d4e4a9c28de3bfb016dfb09b6c413665379db2314cd28d18db0c51f039d",
+    "metrics": 12,
+    "result_rows": 4,
+    "timeline_svg": true,
+    "resource_svg": true,
+    "invariant_checks": 6,
+    "explanation": [
+      "未发现可直接引用的故障或等待事件；请结合汇总指标查看结果。 [summary]",
+      "约束检查报告 0 项未通过。请注意检查项覆盖范围。 [invariant_checks]",
+      "解释仅引用本次仿真记录；设定时间不是 GPU 实测，不能据此推断真实训练精度或在线迁移能力。"
+    ],
+    "page_text_contains_replay_boundary": true
+  },
+  "screenshot": "D:\\App\\vs.code\\ai-infra\\gpu\\FabricSandbox_今晚分工包_一日版\\代码包\\FabricSandbox_v2_重构代码与实验交付\\FabricSandbox_v2\\evidence\\team_1103_tp\\browser_tp_acceptance.png"
+}

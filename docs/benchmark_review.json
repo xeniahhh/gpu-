@@ -1,0 +1,854 @@
+{
+  "measured_at": "2026-11-01T09:09:36.161152+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm"
+  },
+  "method": {
+    "timer": "time.perf_counter",
+    "repeats": 5,
+    "warmups_per_stage": 1,
+    "runtime_mode": "single-process sequential CPU model",
+    "timings_exclude": [
+      "HTTP",
+      "browser",
+      "database",
+      "GPU",
+      "real network",
+      "startup"
+    ],
+    "interpretation": "Model computation latency only; not real GPU throughput or parallel speedup.",
+    "scaling_control": "1 ring job requesting 16 GPUs; 8 spines and 8 GPUs/node held constant. Nodes and leaves increase.",
+    "workload_control": "Default 1024-GPU topology; one job requests 16/32/64/128 GPUs."
+  },
+  "source_sha256": {
+    "packages/fabric-domain/src/fabric_domain/evaluation.py": "1834fa59712bdd5d61ad0560ad0f4055a76268f7f3c1975d8b5e3699491dd0ce",
+    "services/planner/src/planner/coordinator.py": "fcf39eb10364ea4ae1f701522b40f6bf1182e7f4bfa3441a66511e0e3a587280",
+    "services/aggregator/src/aggregator/merge.py": "af87c1faceadd21ad28db6e55b4bc3f11027f285ed5af5da0220463bd50b06f1"
+  },
+  "fixture": {
+    "fixture": "rail-aware-comparison.json",
+    "flow_unit_gbps": 200.0,
+    "strategy_comparison": [
+      {
+        "strategy": "first_fit",
+        "job_alignment": {
+          "job-multi-01": 0.5,
+          "job-small-02": 1.0
+        },
+        "job_throughput_proxy_gbps": {
+          "job-multi-01": 100.0,
+          "job-small-02": null
+        },
+        "flow_count": 1
+      },
+      {
+        "strategy": "rail_aware",
+        "job_alignment": {
+          "job-multi-01": 1.0,
+          "job-small-02": 1.0
+        },
+        "job_throughput_proxy_gbps": {
+          "job-multi-01": 100.0,
+          "job-small-02": 133.333333
+        },
+        "flow_count": 2
+      }
+    ],
+    "worker_results": [
+      {
+        "worker_count": 1,
+        "failed_workers": [],
+        "equal_to_one_worker": true,
+        "cpu_end_to_end_time": {
+          "median_ms": 0.4081,
+          "min_ms": 0.3985,
+          "max_ms": 0.435,
+          "samples_ms": [
+            0.435,
+            0.4196,
+            0.4081,
+            0.4058,
+            0.3985
+          ]
+        },
+        "job_throughput_proxy_gbps": {
+          "job-multi-01": 100.0,
+          "job-small-02": 133.333333
+        },
+        "assignments": {
+          "worker-1": [
+            "job-multi-01",
+            "job-small-02"
+          ]
+        },
+        "reassigned": {},
+        "capacity_violations": [],
+        "link_flow_mismatches": []
+      },
+      {
+        "worker_count": 2,
+        "failed_workers": [],
+        "equal_to_one_worker": true,
+        "cpu_end_to_end_time": {
+          "median_ms": 0.547,
+          "min_ms": 0.5312,
+          "max_ms": 0.5748,
+          "samples_ms": [
+            0.5528,
+            0.547,
+            0.5418,
+            0.5312,
+            0.5748
+          ]
+        },
+        "job_throughput_proxy_gbps": {
+          "job-multi-01": 100.0,
+          "job-small-02": 133.333333
+        },
+        "assignments": {
+          "worker-1": [
+            "job-multi-01"
+          ],
+          "worker-2": [
+            "job-small-02"
+          ]
+        },
+        "reassigned": {},
+        "capacity_violations": [],
+        "link_flow_mismatches": []
+      },
+      {
+        "worker_count": 3,
+        "failed_workers": [],
+        "equal_to_one_worker": true,
+        "cpu_end_to_end_time": {
+          "median_ms": 0.5321,
+          "min_ms": 0.529,
+          "max_ms": 0.5625,
+          "samples_ms": [
+            0.5493,
+            0.529,
+            0.5321,
+            0.5625,
+            0.5318
+          ]
+        },
+        "job_throughput_proxy_gbps": {
+          "job-multi-01": 100.0,
+          "job-small-02": 133.333333
+        },
+        "assignments": {
+          "worker-1": [
+            "job-multi-01"
+          ],
+          "worker-2": [
+            "job-small-02"
+          ],
+          "worker-3": []
+        },
+        "reassigned": {},
+        "capacity_violations": [],
+        "link_flow_mismatches": []
+      },
+      {
+        "worker_count": 2,
+        "failed_workers": [
+          "worker-1"
+        ],
+        "equal_to_one_worker": true,
+        "cpu_end_to_end_time": {
+          "median_ms": 0.3931,
+          "min_ms": 0.3883,
+          "max_ms": 0.4432,
+          "samples_ms": [
+            0.3948,
+            0.3931,
+            0.3883,
+            0.3892,
+            0.4432
+          ]
+        },
+        "job_throughput_proxy_gbps": {
+          "job-multi-01": 100.0,
+          "job-small-02": 133.333333
+        },
+        "assignments": {
+          "worker-2": [
+            "job-multi-01",
+            "job-small-02"
+          ]
+        },
+        "reassigned": {
+          "worker-1": "worker-2"
+        },
+        "capacity_violations": [],
+        "link_flow_mismatches": []
+      }
+    ]
+  },
+  "topology_scaling": [
+    {
+      "gpus": 16,
+      "spines": 8,
+      "leaves": 2,
+      "nodes": 2,
+      "links": 18,
+      "jobs": 1,
+      "requested_gpus": 16,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 1,
+      "generation": {
+        "median_ms": 0.0339,
+        "min_ms": 0.0321,
+        "max_ms": 0.0361,
+        "samples_ms": [
+          0.0361,
+          0.0359,
+          0.0339,
+          0.0327,
+          0.0321
+        ]
+      },
+      "validation": {
+        "median_ms": 0.0391,
+        "min_ms": 0.0376,
+        "max_ms": 0.052,
+        "samples_ms": [
+          0.052,
+          0.0433,
+          0.0391,
+          0.0382,
+          0.0376
+        ]
+      },
+      "placement": {
+        "median_ms": 0.0387,
+        "min_ms": 0.037,
+        "max_ms": 0.0414,
+        "samples_ms": [
+          0.0414,
+          0.0399,
+          0.0387,
+          0.0373,
+          0.037
+        ]
+      },
+      "evaluation": {
+        "median_ms": 0.0755,
+        "min_ms": 0.0736,
+        "max_ms": 0.0849,
+        "samples_ms": [
+          0.0849,
+          0.078,
+          0.0755,
+          0.0743,
+          0.0736
+        ]
+      }
+    },
+    {
+      "gpus": 64,
+      "spines": 8,
+      "leaves": 4,
+      "nodes": 8,
+      "links": 40,
+      "jobs": 1,
+      "requested_gpus": 16,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 1,
+      "generation": {
+        "median_ms": 0.0803,
+        "min_ms": 0.0786,
+        "max_ms": 0.0869,
+        "samples_ms": [
+          0.0795,
+          0.0869,
+          0.0803,
+          0.0786,
+          0.082
+        ]
+      },
+      "validation": {
+        "median_ms": 0.0896,
+        "min_ms": 0.088,
+        "max_ms": 0.097,
+        "samples_ms": [
+          0.097,
+          0.0917,
+          0.0896,
+          0.088,
+          0.0883
+        ]
+      },
+      "placement": {
+        "median_ms": 0.1977,
+        "min_ms": 0.1963,
+        "max_ms": 0.2033,
+        "samples_ms": [
+          0.2033,
+          0.2018,
+          0.1963,
+          0.197,
+          0.1977
+        ]
+      },
+      "evaluation": {
+        "median_ms": 0.1181,
+        "min_ms": 0.1146,
+        "max_ms": 0.1307,
+        "samples_ms": [
+          0.1307,
+          0.1243,
+          0.1181,
+          0.1146,
+          0.1152
+        ]
+      }
+    },
+    {
+      "gpus": 256,
+      "spines": 8,
+      "leaves": 8,
+      "nodes": 32,
+      "links": 96,
+      "jobs": 1,
+      "requested_gpus": 16,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 1,
+      "generation": {
+        "median_ms": 0.2404,
+        "min_ms": 0.2328,
+        "max_ms": 0.3083,
+        "samples_ms": [
+          0.2328,
+          0.3083,
+          0.2467,
+          0.2404,
+          0.2397
+        ]
+      },
+      "validation": {
+        "median_ms": 0.264,
+        "min_ms": 0.2592,
+        "max_ms": 0.2805,
+        "samples_ms": [
+          0.2805,
+          0.264,
+          0.2678,
+          0.2609,
+          0.2592
+        ]
+      },
+      "placement": {
+        "median_ms": 0.8439,
+        "min_ms": 0.8291,
+        "max_ms": 0.8907,
+        "samples_ms": [
+          0.8439,
+          0.8387,
+          0.8907,
+          0.8443,
+          0.8291
+        ]
+      },
+      "evaluation": {
+        "median_ms": 0.2522,
+        "min_ms": 0.2465,
+        "max_ms": 0.3124,
+        "samples_ms": [
+          0.2568,
+          0.2522,
+          0.2465,
+          0.3124,
+          0.2489
+        ]
+      }
+    },
+    {
+      "gpus": 1024,
+      "spines": 8,
+      "leaves": 16,
+      "nodes": 128,
+      "links": 256,
+      "jobs": 1,
+      "requested_gpus": 16,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 1,
+      "generation": {
+        "median_ms": 0.8994,
+        "min_ms": 0.8488,
+        "max_ms": 0.9976,
+        "samples_ms": [
+          0.8488,
+          0.9357,
+          0.8994,
+          0.9976,
+          0.8889
+        ]
+      },
+      "validation": {
+        "median_ms": 0.9852,
+        "min_ms": 0.9608,
+        "max_ms": 1.0453,
+        "samples_ms": [
+          1.0039,
+          0.9827,
+          0.9852,
+          1.0453,
+          0.9608
+        ]
+      },
+      "placement": {
+        "median_ms": 3.4451,
+        "min_ms": 3.4388,
+        "max_ms": 3.4558,
+        "samples_ms": [
+          3.4451,
+          3.4388,
+          3.4558,
+          3.443,
+          3.4486
+        ]
+      },
+      "evaluation": {
+        "median_ms": 0.7151,
+        "min_ms": 0.6238,
+        "max_ms": 0.7295,
+        "samples_ms": [
+          0.7151,
+          0.6415,
+          0.7295,
+          0.6238,
+          0.7158
+        ]
+      }
+    }
+  ],
+  "workload_scaling": [
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 16,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 1,
+      "evaluation": {
+        "median_ms": 0.6923,
+        "min_ms": 0.6109,
+        "max_ms": 0.7931,
+        "samples_ms": [
+          0.6923,
+          0.6205,
+          0.7931,
+          0.6109,
+          0.6963
+        ]
+      }
+    },
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 16,
+      "communication_mode": "all_to_all",
+      "cross_node_flows": 1,
+      "evaluation": {
+        "median_ms": 0.6832,
+        "min_ms": 0.6043,
+        "max_ms": 0.6978,
+        "samples_ms": [
+          0.6832,
+          0.6153,
+          0.6978,
+          0.6043,
+          0.6931
+        ]
+      }
+    },
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 32,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 4,
+      "evaluation": {
+        "median_ms": 0.9343,
+        "min_ms": 0.8825,
+        "max_ms": 1.0469,
+        "samples_ms": [
+          0.8825,
+          1.0469,
+          0.9239,
+          0.9354,
+          0.9343
+        ]
+      }
+    },
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 32,
+      "communication_mode": "all_to_all",
+      "cross_node_flows": 6,
+      "evaluation": {
+        "median_ms": 1.0914,
+        "min_ms": 1.067,
+        "max_ms": 1.3122,
+        "samples_ms": [
+          1.067,
+          1.3122,
+          1.1143,
+          1.0914,
+          1.0914
+        ]
+      }
+    },
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 64,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 8,
+      "evaluation": {
+        "median_ms": 1.2657,
+        "min_ms": 1.2537,
+        "max_ms": 1.4512,
+        "samples_ms": [
+          1.4512,
+          1.2537,
+          1.2639,
+          1.2901,
+          1.2657
+        ]
+      }
+    },
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 64,
+      "communication_mode": "all_to_all",
+      "cross_node_flows": 28,
+      "evaluation": {
+        "median_ms": 3.1832,
+        "min_ms": 2.9273,
+        "max_ms": 3.1971,
+        "samples_ms": [
+          3.186,
+          3.1545,
+          3.1832,
+          2.9273,
+          3.1971
+        ]
+      }
+    },
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 128,
+      "communication_mode": "ring_all_reduce",
+      "cross_node_flows": 16,
+      "evaluation": {
+        "median_ms": 2.0046,
+        "min_ms": 1.941,
+        "max_ms": 2.1865,
+        "samples_ms": [
+          2.1592,
+          2.002,
+          2.1865,
+          2.0046,
+          1.941
+        ]
+      }
+    },
+    {
+      "topology_gpus": 1024,
+      "requested_gpus": 128,
+      "communication_mode": "all_to_all",
+      "cross_node_flows": 120,
+      "evaluation": {
+        "median_ms": 12.4488,
+        "min_ms": 12.192,
+        "max_ms": 14.7311,
+        "samples_ms": [
+          13.7506,
+          12.2616,
+          12.192,
+          12.4488,
+          14.7311
+        ]
+      }
+    }
+  ],
+  "original_baseline": {
+    "measured_at": "2026-11-01T09:09:36.613401+00:00",
+    "environment": {
+      "python": "3.12.14",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "machine": "arm64",
+      "processor": "arm"
+    },
+    "method": {
+      "timer": "time.perf_counter",
+      "repeats": 5,
+      "warmups_per_stage": 1,
+      "runtime_mode": "single-process sequential CPU model",
+      "timings_exclude": [
+        "HTTP",
+        "browser",
+        "database",
+        "GPU",
+        "real network",
+        "startup"
+      ],
+      "interpretation": "Model computation latency only; not real GPU throughput or parallel speedup.",
+      "scaling_control": "1 ring job requesting 16 GPUs; 8 spines and 8 GPUs/node held constant. Nodes and leaves increase.",
+      "workload_control": "Default 1024-GPU topology; one job requests 16/32/64/128 GPUs."
+    },
+    "source_sha256": {
+      "packages/fabric-domain/src/fabric_domain/evaluation.py": "9b9c926a2f5eea53872a01dd758143c15429dedbb4d4a559bd3c5eb97e55e16e",
+      "services/planner/src/planner/coordinator.py": "76faf905750bdef5b2b8980aaa056a2bec2ce1ae07cecbf9befdfbd03818faaa",
+      "services/aggregator/src/aggregator/merge.py": "7178a27551a4ea89c6f9697b43af01f2043d4cfd335970176c4e493deb1be522"
+    },
+    "fixture": {
+      "fixture": "rail-aware-comparison.json",
+      "flow_unit_gbps": 200.0,
+      "strategy_comparison": [
+        {
+          "strategy": "first_fit",
+          "job_alignment": {
+            "job-multi-01": 0.5,
+            "job-small-02": 1.0
+          },
+          "job_throughput_proxy_gbps": {
+            "job-multi-01": 100.0,
+            "job-small-02": null
+          },
+          "flow_count": 1
+        },
+        {
+          "strategy": "rail_aware",
+          "job_alignment": {
+            "job-multi-01": 1.0,
+            "job-small-02": 1.0
+          },
+          "job_throughput_proxy_gbps": {
+            "job-multi-01": 100.0,
+            "job-small-02": 133.333333
+          },
+          "flow_count": 2
+        }
+      ],
+      "worker_results": [
+        {
+          "worker_count": 1,
+          "failed_workers": [],
+          "equal_to_one_worker": true,
+          "cpu_end_to_end_time": {
+            "median_ms": 0.2316,
+            "min_ms": 0.2217,
+            "max_ms": 0.2545,
+            "samples_ms": [
+              0.2545,
+              0.2369,
+              0.2316,
+              0.2267,
+              0.2217
+            ]
+          },
+          "job_throughput_proxy_gbps": {
+            "job-multi-01": 100.0,
+            "job-small-02": 133.333333
+          },
+          "assignments": {
+            "worker-1": [
+              "job-multi-01",
+              "job-small-02"
+            ]
+          },
+          "reassigned": {},
+          "capacity_violations": [],
+          "link_flow_mismatches": [
+            {
+              "link_id": "spine-1--leaf-0",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 133.333333
+            },
+            {
+              "link_id": "spine-1--leaf-1",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 133.333333
+            },
+            {
+              "link_id": "leaf-0--node-0",
+              "reported_allocated_gbps": 400.0,
+              "flow_sum_gbps": 333.333333
+            },
+            {
+              "link_id": "leaf-1--node-1",
+              "reported_allocated_gbps": 400.0,
+              "flow_sum_gbps": 333.333333
+            }
+          ]
+        },
+        {
+          "worker_count": 2,
+          "failed_workers": [],
+          "equal_to_one_worker": false,
+          "cpu_end_to_end_time": {
+            "median_ms": 0.3654,
+            "min_ms": 0.3607,
+            "max_ms": 0.4098,
+            "samples_ms": [
+              0.3654,
+              0.4098,
+              0.3664,
+              0.362,
+              0.3607
+            ]
+          },
+          "job_throughput_proxy_gbps": {
+            "job-multi-01": 66.666667,
+            "job-small-02": 66.666667
+          },
+          "assignments": {
+            "worker-1": [
+              "job-multi-01"
+            ],
+            "worker-2": [
+              "job-small-02"
+            ]
+          },
+          "reassigned": {},
+          "capacity_violations": [
+            {
+              "link_id": "spine-0--leaf-0",
+              "capacity_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            },
+            {
+              "link_id": "spine-0--leaf-1",
+              "capacity_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            }
+          ],
+          "link_flow_mismatches": [
+            {
+              "link_id": "spine-0--leaf-0",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            },
+            {
+              "link_id": "spine-0--leaf-1",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            }
+          ]
+        },
+        {
+          "worker_count": 3,
+          "failed_workers": [],
+          "equal_to_one_worker": false,
+          "cpu_end_to_end_time": {
+            "median_ms": 0.3664,
+            "min_ms": 0.3593,
+            "max_ms": 0.4093,
+            "samples_ms": [
+              0.3664,
+              0.3593,
+              0.3655,
+              0.4093,
+              0.3665
+            ]
+          },
+          "job_throughput_proxy_gbps": {
+            "job-multi-01": 66.666667,
+            "job-small-02": 66.666667
+          },
+          "assignments": {
+            "worker-1": [
+              "job-multi-01"
+            ],
+            "worker-2": [
+              "job-small-02"
+            ],
+            "worker-3": []
+          },
+          "reassigned": {},
+          "capacity_violations": [
+            {
+              "link_id": "spine-0--leaf-0",
+              "capacity_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            },
+            {
+              "link_id": "spine-0--leaf-1",
+              "capacity_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            }
+          ],
+          "link_flow_mismatches": [
+            {
+              "link_id": "spine-0--leaf-0",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            },
+            {
+              "link_id": "spine-0--leaf-1",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 400.0
+            }
+          ]
+        },
+        {
+          "worker_count": 2,
+          "failed_workers": [
+            "worker-1"
+          ],
+          "equal_to_one_worker": true,
+          "cpu_end_to_end_time": {
+            "median_ms": 0.2768,
+            "min_ms": 0.2312,
+            "max_ms": 0.4611,
+            "samples_ms": [
+              0.3735,
+              0.4611,
+              0.2768,
+              0.2412,
+              0.2312
+            ]
+          },
+          "job_throughput_proxy_gbps": {
+            "job-multi-01": 100.0,
+            "job-small-02": 133.333333
+          },
+          "assignments": {
+            "worker-2": [
+              "job-multi-01",
+              "job-small-02"
+            ]
+          },
+          "reassigned": {
+            "worker-1": "worker-2"
+          },
+          "capacity_violations": [],
+          "link_flow_mismatches": [
+            {
+              "link_id": "spine-1--leaf-0",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 133.333333
+            },
+            {
+              "link_id": "spine-1--leaf-1",
+              "reported_allocated_gbps": 200.0,
+              "flow_sum_gbps": 133.333333
+            },
+            {
+              "link_id": "leaf-0--node-0",
+              "reported_allocated_gbps": 400.0,
+              "flow_sum_gbps": 333.333333
+            },
+            {
+              "link_id": "leaf-1--node-1",
+              "reported_allocated_gbps": 400.0,
+              "flow_sum_gbps": 333.333333
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

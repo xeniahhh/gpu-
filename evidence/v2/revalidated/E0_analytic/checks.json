@@ -1,0 +1,30 @@
+[
+  {
+    "name": "one_completion",
+    "passed": true,
+    "detail": [
+      8.05306368
+    ]
+  },
+  {
+    "name": "analytic_time",
+    "passed": true,
+    "detail": {
+      "expected_ms": 8.05306368,
+      "observed_ms": 8.05306368
+    }
+  },
+  {
+    "name": "exact_group_bytes",
+    "passed": true,
+    "detail": {
+      "expected_bytes": 402653184,
+      "observed_bytes": 402653184.0
+    }
+  },
+  {
+    "name": "capacity",
+    "passed": true,
+    "detail": 1.0
+  }
+]

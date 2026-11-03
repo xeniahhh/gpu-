@@ -1,0 +1,29 @@
+{
+  "profile": {
+    "source": "SYNTHETIC",
+    "workspace_gib": 2,
+    "prefill_ms_per_token_by_tp": {
+      "1": 0.3,
+      "2": 0.2,
+      "4": 0.16
+    },
+    "decode_ms_per_token_by_tp": {
+      "1": 12.0,
+      "2": 8.0,
+      "4": 7.0
+    },
+    "model_reload_ms": 40.0
+  },
+  "model": {
+    "name": "Qwen2.5-7B-Instruct",
+    "parameter_count": 7610000000,
+    "parameter_source": "MODEL_CARD_ROUNDED",
+    "layers": 28,
+    "hidden_size": 3584,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "dtype_bytes": 2,
+    "max_context_tokens": 32768
+  }
+}

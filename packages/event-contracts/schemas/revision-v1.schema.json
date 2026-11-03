@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fabric-sandbox.local/schemas/revision-v1.schema.json",
+  "title": "Revision content v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "revision_id", "topology", "jobs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "revision_id": {"type": "string", "minLength": 1},
+    "topology": {"$ref": "./topology-v1.schema.json"},
+    "jobs": {
+      "type": "array",
+      "items": {"$ref": "./job-v1.schema.json"}
+    }
+  }
+}

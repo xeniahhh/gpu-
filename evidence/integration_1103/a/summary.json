@@ -1,0 +1,52 @@
+{
+  "recorded_at_utc": "2026-11-02T17:52:31.928008+00:00",
+  "owner": "A",
+  "scope": "Case 1 DDP owner tasks plus optional TP collective microbenchmarks",
+  "tasks": [
+    {
+      "task": "A0",
+      "status": "COMPLETED",
+      "evidence": "environment.json; topology.txt; python_packages.txt"
+    },
+    {
+      "task": "A1",
+      "status": "COMPLETED",
+      "evidence": "gpt2_profile.json"
+    },
+    {
+      "task": "A2",
+      "status": "COMPLETED",
+      "evidence": "allreduce_gradient.json"
+    },
+    {
+      "task": "A3",
+      "status": "COMPLETED",
+      "evidence": "measured_compute_compact/; measured_compute_competition/"
+    },
+    {
+      "task": "A4",
+      "status": "COMPLETED",
+      "evidence": "state_tests.log; fault_review/; fault_audit.json; repeated_fault_review/"
+    },
+    {
+      "task": "A5",
+      "status": "COMPLETED",
+      "evidence": "tp_message_7168.json; tp_message_917504.json"
+    }
+  ],
+  "implementation_hash": "d844734439ed524fe81d843d0065a17510ebf161c5efc036f31cf4bb061cd4e3",
+  "measurement_id": "16c1c10024953a2f76f923aede859085756c975c158cc71db98382c48c5eaae2",
+  "validation": {
+    "domain_tests_passed": 35,
+    "specified_fault_scenarios_passed": 4,
+    "fault_audit_checks_passed": 15,
+    "measurement_checks_passed": 19,
+    "artifact_checks_passed": 29
+  },
+  "limitations": [
+    "A1 plus A2 is not measured multi-GPU DDP training time.",
+    "A3 uses measured compute and an admission memory budget; network and recovery timings remain synthetic.",
+    "A5 is not Qwen inference or measured TTFT.",
+    "Team B/C acceptance and independent human cross-review remain outstanding."
+  ]
+}

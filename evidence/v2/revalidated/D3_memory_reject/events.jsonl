@@ -1,0 +1,4 @@
+{"time_ms": 0.0, "kind": "job_state", "subject_id": "A", "before": "pending", "state": "waiting", "epoch": 0, "step": 0, "message": "作业到达，等待完整 GPU 通信组"}
+{"time_ms": 0.0, "kind": "job_state", "subject_id": "B", "before": "pending", "state": "waiting", "epoch": 0, "step": 0, "message": "作业到达，等待完整 GPU 通信组"}
+{"time_ms": 0.0, "kind": "job_state", "subject_id": "A", "before": "waiting", "state": "unschedulable", "epoch": 0, "step": 0, "message": "单卡显存规格或集群总卡数无法满足固定通信组"}
+{"time_ms": 0.0, "kind": "job_state", "subject_id": "B", "before": "waiting", "state": "unschedulable", "epoch": 0, "step": 0, "message": "单卡显存规格或集群总卡数无法满足固定通信组"}

@@ -1,0 +1,52 @@
+{
+  "recorded_at_utc": "2026-11-03T02:37:09.498330+00:00",
+  "kind": "LIVE_BROWSER_ACCEPTANCE",
+  "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "base_url": "http://127.0.0.1:8000",
+  "checks": [
+    {
+      "name": "Edge loads workload page",
+      "passed": true,
+      "detail": {
+        "title": "FabricSandbox · 工作负载与故障分析"
+      }
+    },
+    {
+      "name": "browser token connects and loads scenarios",
+      "passed": true,
+      "detail": {
+        "connection": "已连接 · 14 个场景",
+        "scenarios": 14
+      }
+    },
+    {
+      "name": "browser submits and renders shared-link competition",
+      "passed": true,
+      "detail": {
+        "status": "评估完成",
+        "identity": "sim-eabe05fb77364ed893e01b85d393e9b8 · DDP · 输入 6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea",
+        "timeline": true,
+        "checks": "✓ gpu_world_memory_checkpoint：[object Object]\n✓ link_capacity：[object Object]\n✓ synchronization_before_update：[object Object]\n✓ completed_jobs_have_target_progress：[object Object]",
+        "comparison": "再运行一个对照场景即可比较。"
+      }
+    },
+    {
+      "name": "browser submits and renders no-spare fault recovery",
+      "passed": false,
+      "detail": {
+        "status": "评估完成",
+        "identity": "sim-1341ced8a5774164b17c315f6a23de4e · DDP · 输入 f48a9fef496981f5ace44cb79efba360a71f75dafe20d9d3bb32f6ea455e28e4",
+        "timeline": true,
+        "checks": "✓ gpu_world_memory_checkpoint：[object Object]\n✓ link_capacity：[object Object]\n✓ synchronization_before_update：[object Object]\n✓ completed_jobs_have_target_progress：[object Object]",
+        "comparison": "sim-eabe05fb77364ed893e01b85d393e9b8 → sim-1341ced8a5774164b17c315f6a23de4e\n\n指标\t上次\t本次\t本次−上次\n作业数\t2\t2\t0\n完成作业\t2\t2\t0\n未完成作业\t0\t0\t0\n不可调度作业\t0\t0\t0\n最终模拟时刻\t10,721.333\t10,435.378\t-285.955\n平均完成时间\t10,721.333\t7,889.555\t-2,831.778\n丢失步数\t0\t6\t6\n重启次数\t0\t1\t1"
+      }
+    }
+  ],
+  "screenshots": [
+    "evidence\\day1_c\\browser_competition.png",
+    "evidence\\day1_c\\browser_fault_no_spare.png"
+  ],
+  "passed": false,
+  "passed_count": 3,
+  "total_count": 4
+}

@@ -1,0 +1,49 @@
+﻿scenario,task_id,task,priority,owner,hours,status,evidence,checked_by
+DDP,D01,冻结问题和实验边界,P0,A 单人,0.5 小时,待组员核验,,
+DDP,D02,核对模型配置及梯度字节量,P0,A 单人,0.75 小时,待组员核验,,
+DDP,D03,冻结输入与跨模块合同,P0,A 主责，B/C 联调,1 小时,待组员核验,,
+DDP,D04,核对训练阶段及同步依赖,P0,A 主责，B 提供通信接口,1.5 小时,待组员核验,,
+DDP,D05,核对检查点保存与故障回滚,P0,A 单人,1.5 小时,待组员核验,,
+DDP,D06,阻止故障前的旧事件污染新执行,P0,A 单人,1.25 小时,待组员核验,,
+DDP,D07,运行资源准入与故障实验,P0,A 主责，B 核对分配,2 小时,待组员核验,,
+DDP,D08,获取 3090 实测 profile（主线通过后）,P1,A 单人，可请 B 复核计时,2 小时起,待组员核验,,
+DDP,D09,核对拓扑与物理资源映射,P0,B 单人,1 小时,待组员核验,,
+DDP,D10,验证 Ring 两阶段和解析参考,P0,B 单人,1.5 小时,待组员核验,,
+DDP,D11,验证事件推进和动态容量共享,P0,B 单人,2 小时,待组员核验,,
+DDP,D12,验证显存准入和成组分配,P0,B 主责，A 定义作业语义,1.5 小时,待组员核验,,
+DDP,D13,运行放置与共享竞争实验,P0,B 单人,1.5 小时,待组员核验,,
+DDP,D14,检查节点及链路故障的影响范围,P0,B 主责，A 联调恢复,0.75 小时,待组员核验,,
+DDP,D15,比较策略并解释代价,P0,B 单人,1 小时,待组员核验,,
+DDP,D16,分析规模与敏感性,P0,B 单人,0.75 小时,待组员核验,,
+DDP,D17,验证提交、查询与错误合同,P0,C 单人,1.5 小时,仿真验证通过,evidence/integration_1103/http_acceptance.json,C
+DDP,D18,验证快照和持久记录,P0,C 单人,1 小时,仿真验证通过,evidence/task_c_1103/restart_acceptance.json,C
+DDP,D19,验证身份、权限及输入边界,P0,C 单人,0.75 小时,仿真验证通过,evidence/integration_1103/http_acceptance.json,C
+DDP,D20,验证 Assistant 的证据引用,P0,C 主责，A/B 各复核一个解释,0.75 小时,仿真验证通过,evidence/integration_1103/browser_integrated.json,C
+DDP,D21,完善可操作演示界面,P0,C 单人,1.5 小时,仿真验证通过,evidence/integration_1103/browser_integrated.png,C
+DDP,D22,制作架构、数据和状态图,P0,C 主责，A/B 各核对相关边界,1 小时,初稿完成,output/presentation/FabricSandbox_v2_课程汇报_内容重制版_20261103_rev2.pptx,C
+DDP,D23,形成 8–12 页正式报告与答辩材料,P0,C 整理，A/B 各交自己的原始小节,2 小时,初稿完成,docs/refactor/C-task-delivery-20261103.md; output/pdf/FabricSandbox_v2_最终报告_20261103_rev2.pdf; output/presentation/FabricSandbox_v2_课程汇报_内容重制版_20261103_rev2.pptx,C
+DDP,D24,干净环境复现与五分钟演示,P0,C 主责，全员验收,1.5 小时,部分完成；待现场录屏,Git URL/提交号与录屏待团队提供,C
+TP,T01,冻结部署问题和比较口径,P0,A 单人,0.5 小时,待组员核验,,
+TP,T02,核对模型结构与合法切分,P0,A 单人,0.75 小时,待组员核验,,
+TP,T03,核对 KV 和显存准入公式,P0,A 单人,1.5 小时,待组员核验,,
+TP,T04,核对 prefill/decode 的执行与通信依赖,P0,A 主责，B 提供集合通信,2 小时,待组员核验,,
+TP,T05,定义计算 profile 与单位来源,P0,A 单人,1 小时,待组员核验,,
+TP,T06,核对副本故障和请求终态,P0,A 单人,1.5 小时,待组员核验,,
+TP,T07,冻结可复现请求集与对照输入,P0,A 主责，B 联调实验,1.5 小时,待组员核验,,
+TP,T08,获取真实推理与通信 profile,P1,A 单人，B 复核统计,2.5 小时起,待组员核验,,
+TP,T09,核对共享拓扑及单机/多机边界,P0,B 单人,0.75 小时,待组员核验,,
+TP,T10,核对容量共享与通信结束时刻,P0,B 单人,0.75 小时,待组员核验,,
+TP,T11,核对 TP 激活量与集合通信次数,P0,B 主责，A 核对模型语义,0.75 小时,待组员核验,,
+TP,T12,实现或复核显存合法的副本放置,P0,B 单人,1 小时,待组员核验,,
+TP,T13,运行两个副本共享链路的实验,P0,B 单人,1.25 小时,待组员核验,,
+TP,T14,运行上下文长度与 KV 准入实验,P0,B 主责，A 核对公式,1 小时,待组员核验,,
+TP,T15,比较 TP=1/2/4 与副本数量,P0,B 单人,1.5 小时,待组员核验,,
+TP,T16,分析敏感性、规模和遗漏因素,P0,B 单人,1 小时,待组员核验,,
+TP,T17,核对 v2 API 与输入边界,P0,C 单人,1.5 小时,仿真验证通过,evidence/team_1103_tp/http_acceptance.json,C
+TP,T18,核对不可变快照和持久状态,P0,C 单人,1 小时,仿真验证通过,evidence/team_1103_tp/http_acceptance.json; evidence/task_c_1103/restart_acceptance.json,C
+TP,T19,核对角色权限与只读边界,P0,C 单人,0.75 小时,仿真验证通过,evidence/team_1103_tp/http_acceptance.json,C
+TP,T20,让 Assistant 解释具体请求和约束,P0,C 主责，A/B 复核,0.75 小时,仿真验证通过,evidence/team_1103_tp/browser_tp_acceptance.json,C
+TP,T21,完善推理场景演示视图,P0,C 单人,1.5 小时,仿真验证通过,evidence/team_1103_tp/browser_tp_acceptance.png,C
+TP,T22,集成负例与资源释放验收,P0,C 主责，A/B 修各自模块,1.5 小时,仿真验证通过,evidence/team_1103_tp/T3_fault,C
+TP,T23,制作图示与正式报告,P0,C 整理，A/B 分别供稿,2 小时,初稿完成,docs/refactor/C-task-delivery-20261103.md; docs/refactor/case2-analysis-20261103.md; output/pdf/FabricSandbox_v2_最终报告_20261103_rev2.pdf,C
+TP,T24,干净环境复现与演示排练,P0,C 主责，全员验收,1.5 小时,部分完成；待现场录屏,Git URL/提交号与录屏待团队提供,C

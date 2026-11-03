@@ -1,0 +1,363 @@
+{
+  "schema_version": 2,
+  "scenario": "ddp",
+  "profile": {
+    "compute_ms": 100.0,
+    "optimizer_ms": 5.0,
+    "peak_memory_gib": 4.0,
+    "checkpoint_save_ms": 200.0,
+    "restore_ms": 300.0,
+    "group_init_ms": 100.0,
+    "source": "SYNTHETIC",
+    "measurement_id": null,
+    "source_scope": "Per-field provenance is authoritative; default recovery costs are synthetic.",
+    "field_sources": {
+      "compute_ms": "SYNTHETIC",
+      "optimizer_ms": "SYNTHETIC",
+      "peak_memory_gib": "SYNTHETIC",
+      "checkpoint_save_ms": "SYNTHETIC",
+      "restore_ms": "SYNTHETIC",
+      "group_init_ms": "SYNTHETIC"
+    },
+    "model_id": "gpt2-small",
+    "model_config": {
+      "n_layer": 12,
+      "n_embd": 768,
+      "n_head": 12,
+      "vocab_size": 50257,
+      "n_positions": 1024
+    },
+    "parameter_count": 124439808,
+    "gradient_bytes": 497759232,
+    "gradient_source": "DERIVED",
+    "dtype": "float32",
+    "optimizer": "AdamW",
+    "sequence_length": 512,
+    "local_batch_size": 1,
+    "base_training_storage_bytes": 1991036928,
+    "memory_note": "Peak includes a stated profile allowance; base parameter storage is not peak memory."
+  },
+  "summary": {
+    "job_count": 2,
+    "completed_jobs": 0,
+    "unfinished_jobs": 0,
+    "unschedulable_jobs": 2,
+    "simulated_ms": 0.0,
+    "mean_completion_ms": null,
+    "lost_steps": 0,
+    "restarts": 0
+  },
+  "jobs": [
+    {
+      "id": "A",
+      "state": "unschedulable",
+      "reason": "单卡显存规格或集群总卡数无法满足固定通信组",
+      "world_size": 4,
+      "target_steps": 30,
+      "completed_steps": 0,
+      "durable_checkpoint_step": 0,
+      "execution_epoch": 0,
+      "arrival_ms": 0.0,
+      "started_at_ms": null,
+      "completed_at_ms": 0.0,
+      "completion_ms": 0.0,
+      "waiting_ms": 0.0,
+      "computing_ms": 0,
+      "syncing_ms": 0,
+      "updating_ms": 0,
+      "checkpointing_ms": 0,
+      "restoring_ms": 0,
+      "recovery_ms": 0,
+      "recovery_pending_ms": 0,
+      "sync_fraction": 0,
+      "lost_steps": 0,
+      "physical_completed_steps": 0,
+      "restart_count": 0,
+      "ignored_old_events": 0,
+      "gpu_ids": [],
+      "allocation_history": [],
+      "state_timeline": [
+        {
+          "state": "waiting",
+          "start_ms": 0.0,
+          "end_ms": 0.0,
+          "epoch": 0
+        }
+      ],
+      "recoveries": [],
+      "censored": false,
+      "censored_at_ms": null
+    },
+    {
+      "id": "B",
+      "state": "unschedulable",
+      "reason": "单卡显存规格或集群总卡数无法满足固定通信组",
+      "world_size": 4,
+      "target_steps": 30,
+      "completed_steps": 0,
+      "durable_checkpoint_step": 0,
+      "execution_epoch": 0,
+      "arrival_ms": 0.0,
+      "started_at_ms": null,
+      "completed_at_ms": 0.0,
+      "completion_ms": 0.0,
+      "waiting_ms": 0.0,
+      "computing_ms": 0,
+      "syncing_ms": 0,
+      "updating_ms": 0,
+      "checkpointing_ms": 0,
+      "restoring_ms": 0,
+      "recovery_ms": 0,
+      "recovery_pending_ms": 0,
+      "sync_fraction": 0,
+      "lost_steps": 0,
+      "physical_completed_steps": 0,
+      "restart_count": 0,
+      "ignored_old_events": 0,
+      "gpu_ids": [],
+      "allocation_history": [],
+      "state_timeline": [
+        {
+          "state": "waiting",
+          "start_ms": 0.0,
+          "end_ms": 0.0,
+          "epoch": 0
+        }
+      ],
+      "recoveries": [],
+      "censored": false,
+      "censored_at_ms": null
+    }
+  ],
+  "events": [
+    {
+      "time_ms": 0.0,
+      "kind": "job_state",
+      "subject_id": "A",
+      "before": "pending",
+      "state": "waiting",
+      "epoch": 0,
+      "step": 0,
+      "message": "作业到达，等待完整 GPU 通信组"
+    },
+    {
+      "time_ms": 0.0,
+      "kind": "job_state",
+      "subject_id": "B",
+      "before": "pending",
+      "state": "waiting",
+      "epoch": 0,
+      "step": 0,
+      "message": "作业到达，等待完整 GPU 通信组"
+    },
+    {
+      "time_ms": 0.0,
+      "kind": "job_state",
+      "subject_id": "A",
+      "before": "waiting",
+      "state": "unschedulable",
+      "epoch": 0,
+      "step": 0,
+      "message": "单卡显存规格或集群总卡数无法满足固定通信组"
+    },
+    {
+      "time_ms": 0.0,
+      "kind": "job_state",
+      "subject_id": "B",
+      "before": "waiting",
+      "state": "unschedulable",
+      "epoch": 0,
+      "step": 0,
+      "message": "单卡显存规格或集群总卡数无法满足固定通信组"
+    }
+  ],
+  "resource_samples": [
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n0:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n0:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n0:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n1:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n1:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n1:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n2:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n2:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n2:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n3:local",
+      "capacity_gbps": 200.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n3:rx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "node:n3:tx",
+      "capacity_gbps": 100.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "rack:r0:rx",
+      "capacity_gbps": 50.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "rack:r0:tx",
+      "capacity_gbps": 50.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "rack:r1:rx",
+      "capacity_gbps": 50.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    },
+    {
+      "time_ms": 0.0,
+      "resource_id": "rack:r1:tx",
+      "capacity_gbps": 50.0,
+      "allocated_gbps": 0.0,
+      "active_flows": 0
+    }
+  ],
+  "invariant_checks": [
+    {
+      "name": "gpu_world_memory_checkpoint",
+      "passed": true,
+      "detail": {
+        "state_checks": 3,
+        "violations": []
+      }
+    },
+    {
+      "name": "link_capacity",
+      "passed": true,
+      "detail": {
+        "max_observed_ratio": 0.0,
+        "samples": 16
+      }
+    },
+    {
+      "name": "synchronization_before_update",
+      "passed": true,
+      "detail": {
+        "started": 0,
+        "completed": 0
+      }
+    },
+    {
+      "name": "completed_jobs_have_target_progress",
+      "passed": true,
+      "detail": {
+        "completed_jobs": 0
+      }
+    },
+    {
+      "name": "scenario_memory_is_per_rank",
+      "passed": true,
+      "detail": {
+        "A": "unschedulable",
+        "B": "unschedulable"
+      }
+    }
+  ],
+  "engine_stats": {
+    "processed_events": 1,
+    "total_sent_bytes": 0.0,
+    "completed_transfer_bytes": 0,
+    "completed_flows": 0,
+    "cancelled_flows": 0,
+    "pending_flows": 0,
+    "active_flows": 0,
+    "capacity_checks": 16,
+    "max_capacity_ratio": 0.0,
+    "horizon_reached": false,
+    "simulated_time_ms": 0.0,
+    "observation_end_ms": 0.0,
+    "termination_reason": "terminal_jobs"
+  },
+  "observed_checks": {
+    "state_checks": 3,
+    "permanent_rejections": 2
+  },
+  "assumptions": [
+    "单梯度桶、计算与通信不重叠、Ring 轮间统一等待；不模拟 NCCL 内部流水。",
+    "固定 world_size，GPU 独占、非抢占优先队列、队首不回填。",
+    "checkpoint_interval=0 表示不保存新检查点，故障恢复到初始第 0 步。",
+    "故障中止整组，回滚最近完整检查点；检查点保存/加载为显式 profile 成本，不模拟存储网络。",
+    "recovery_ms 累计已结束的连续恢复区间；恢复中再次故障不重置起点，截止时未结束部分记为 recovery_pending_ms。",
+    "SYNTHETIC profile 的时长和显存是设定值；梯度大小由 FP32 模型结构推导。",
+    "节点/链路是合成网络；不能把结果当单机 RTX3090 的实测性能。",
+    "compact 与 first_fit 首版均为确定性节点优先；spread 按节点轮转，不宣称新最优算法。"
+  ],
+  "input_hash": "42808b03fe1aef318babef906627b826a689aa82d84eff2f139a73fbd9dc5ae0",
+  "simulator_version": "0.2.0",
+  "implementation_hash": "d844734439ed524fe81d843d0065a17510ebf161c5efc036f31cf4bb061cd4e3",
+  "engine_wall_ms": 0.2755839377641678,
+  "measurement_status": "SIMULATION_NOT_GPU_MEASUREMENT"
+}

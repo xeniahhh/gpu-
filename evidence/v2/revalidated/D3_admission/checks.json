@@ -1,0 +1,41 @@
+[
+  {
+    "name": "gpu_world_memory_checkpoint",
+    "passed": true,
+    "detail": {
+      "state_checks": 221,
+      "violations": []
+    }
+  },
+  {
+    "name": "link_capacity",
+    "passed": true,
+    "detail": {
+      "max_observed_ratio": 1.0,
+      "samples": 17280
+    }
+  },
+  {
+    "name": "synchronization_before_update",
+    "passed": true,
+    "detail": {
+      "started": 70,
+      "completed": 70
+    }
+  },
+  {
+    "name": "completed_jobs_have_target_progress",
+    "passed": true,
+    "detail": {
+      "completed_jobs": 3
+    }
+  },
+  {
+    "name": "scenario_wait_for_whole_group",
+    "passed": true,
+    "detail": {
+      "waiting_ms": 4743.7421568,
+      "state": "completed"
+    }
+  }
+]

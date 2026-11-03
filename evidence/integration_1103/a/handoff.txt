@@ -1,0 +1,79 @@
+组员 A 实验交接｜案例一 DDP 主线
+本次执行日期：2026-11-02 UTC（实际执行时间，非原排期中的 11 月 3 日）
+证据目录：evidence/owner_20261102_174156
+A0、A1、A2、A3、A4 及可选 A5 均 COMPLETED。组员 B/C 的网络全套对照、规模实验、API/网页验收与最终报告仍按原分工进行。
+
+环境与实际设备
+Python 3.12.15；PyTorch 2.7.1+cu128；CUDA runtime 12.8；Transformers 4.52.4；NCCL 2.26.2；驱动 570.153.02。
+使用现有容器，未创建 Docker 容器或修改驱动。上传的 .venv 是 macOS 版本；当前可用解释器为项目内 var/owner_env/bin/python。
+CUDA_DEVICE_ORDER=PCI_BUS_ID；A1 使用 GPU 0，A2/A5 使用 GPU 0、1。两卡为 RTX 3090；当前拓扑为 NODE、NUMA 0，不是跨机架链路，也没有标注 NVLink。
+GPU 0 UUID：3d1e15ec-0e85-c4cd-48f6-526a8f9f6c9f
+GPU 1 UUID：f185ee28-db58-aae3-6458-656afb88d4fb
+每个 rank 的 UUID 已对照核验。GPU 实验串行执行；结束后的 gpu_after_measurement.log 显示两卡均回到 15 MiB、0% 利用率。
+
+D-A1：模型与通信语义，可直接用于报告
+固定 GPT-2 Small：12 层，hidden=768，12 个注意力头，FFN=3072，词表 50257，最大位置 1024。随机初始化，FP32，AdamW(foreach=False)，每卡 batch=1，序列长度 512，随机 token；不是模型质量实验。
+参数量 P = 50257×768 + 1024×768 + 12×(12×768²+13×768) + 2×768 = 124,439,808；词嵌入和输出头共享权重，只计一次。
+每个 rank 的 FP32 梯度 D=4P=497,759,232 bytes。DDP 每个 rank 保存完整参数和梯度；各 rank 处理各自数据后需要同步梯度，使优化器更新保持一致。
+参数、梯度和 Adam 两份状态的基础存储为 16P=1,991,036,928 bytes/卡；不能除以 GPU 卡数。这还不包含激活、临时缓冲、DDP 梯度桶和框架外分配。
+仿真 Ring 在 R=4 时有 2(R−1)=6 轮，每轮块为 D/R=124,439,808 bytes，每 rank 总发送量为 746,638,848 bytes。仿真采用单梯度桶、轮间同步、无计算通信重叠。
+模型表与结构化数据：model_table.csv、model_semantics.json。
+
+D-A2 / A1：单卡测量（预热 5 次，测量 20 次）
+前向＋反向中位数：34.487297 ms
+优化器中位数：15.213056 ms
+完整单卡 CUDA step 中位数：51.678720 ms
+同步后的单卡墙钟 step 中位数：51.711363 ms
+peak_allocated：2406882304 bytes = 2.241584 GiB
+peak_reserved：2749366272 bytes = 2.560547 GiB
+准入预算：3.560547 GiB，其中额外 1 GiB 是配置余量，不是实测峰值。
+不同指标的中位数一般不可直接相加；单卡 profile 未分配 DDP 梯度桶。
+参数量、梯度字节和 20 个样本均通过验证，原件为 gpt2_profile.json。
+
+D-A2 / A2：两卡梯度 AllReduce（每 rank 497,759,232 bytes，FP32）
+预热 5 次，测量 20 次；每次取两个 rank 中较慢的耗时。
+中位数：83.205631 ms
+算法带宽：5.982278 GB/s
+归一化 bus bandwidth：5.982278 GB/s（两 rank 的归一化因子为 1；不是物理链路直接采样）。
+两个 rank 最终张量求和结果均正确；原件为 allreduce_gradient.json。
+没有强制 NCCL 使用 Ring，没有根据拓扑推断实际传输算法。单卡 profile 与独立 AllReduce 相加不能称为实测多卡 DDP 训练时间，也不能校准跨服务器网络。
+
+A3：使用实测计算 profile 的网络仿真
+仅新建 compute_ms、optimizer_ms、peak_memory_gib 三个字段，measurement_id 为 gpt2_profile.json 的 SHA256。
+checkpoint_save_ms=200、restore_ms=300、group_init_ms=100 仍是 SYNTHETIC；网络容量、延迟亦为仿真设定。peak_memory_gib 引用 reserved 加配置余量的准入预算，不应称为纯测量峰值。
+compact：作业 A/B 均完成 30 步，各耗时 3684.743830 ms，同步耗时 1793.733235 ms。
+competition：作业 A/B 均完成 30 步，各耗时 9062.343535 ms，同步耗时 7171.332941 ms。
+两组所有不变量通过，业务终态均 completed。差异包含放置与共享资源影响，不能把这两组直接当作仅改变竞争的单因素实验。
+输入、输出、事件、checks、metrics、链路样本和瓶颈曲线位于 measured_compute_compact/ 与 measured_compute_competition/。
+
+D-A3 / A4：故障状态与进度正确性（以下均为仿真时间）
+领域测试 35/35 通过；指定的 D4_fault_spare、D4_fault_no_spare、D4_checkpoint_fault、T3_fault 四个场景全部 PASS；事件审查 15/15 通过。
+有备用卡：3000 ms 时 A 从第 16 步回滚至已提交的第 10 步，丢失 6 步，释放旧组并重新分配 4 张卡，3400 ms 恢复；B 无重启。
+没有备用卡：A 同样回滚并保持 world_size=4，等待 2343.733235 ms，B 于 5343.733235 ms 完成后才重新凑齐资源，5743.733235 ms 恢复。等待时不能部分占卡或缩为两卡训练。
+检查点保存中故障：1747.911078 ms 故障发生在首份检查点尚未提交时；A 从第 10 步回到初始第 0 步，丢失 10 步。1847.911078 ms 到达的旧保存完成事件被 epoch 守卫忽略，不能提交半份检查点。
+TP 副本故障：request-1 于 5 ms 明确失败；5.201608 ms 的旧事件被忽略，不能生成 token。其余 3 个请求完成；健康副本继续运行，故障副本在节点修复和加载后于 120 ms 恢复就绪，失败请求本身不自动续写。
+额外连续故障证据：3000 ms 首次故障、3200 ms 恢复中再次故障。第二次故障后资源不足，额外排队 1544.742157 ms，直到 5144.742157 ms 才真正恢复；累计恢复区间为 2144.742157 ms（等待加两段加载），不能只计从最后一次故障起的 1944.742157 ms，否则会漏掉首次失败加载的 200 ms。
+证据：state_tests.log、fault_review/、repeated_fault_review/、fault_audit.json、fault_key_events.csv。ddp_state.mmd 是与代码对应的 Mermaid 状态图。
+
+可选 A5：TP 消息大小的通信微基准
+两张相同 GPU、BF16、预热 5 次、测量 20 次，两个 rank 均校验正确。
+7168 bytes（3584×2）：最慢 rank 中位数 0.147456 ms。
+917504 bytes（128×3584×2）：最慢 rank 中位数 0.333824 ms。
+原件为 tp_message_7168.json 与 tp_message_917504.json；这是激活大小的 AllReduce 测量，不是 Qwen 推理，也没有测得 Qwen TTFT。
+
+三条答辩要点
+1. 为什么多卡仍要检查每卡显存？DDP 复制完整模型和优化器状态，分摊的是数据；基础存储不等于执行峰值，准入预算还包含明示余量。
+2. 为什么保存中故障不能恢复到刚完成的步数？只有 checkpoint_committed 才更新持久化进度；故障使 epoch 增加，旧计算、更新或保存回调都不能推进新一轮状态。
+3. 为什么“没有备用卡”不等于立即永久失败？资源暂时不足时保持固定 world_size 排队；永久规格不足才 unschedulable。TP 的在途请求则会因副本故障明确 failed，不承诺无损 KV 迁移。
+
+版本、复现与交接
+上传目录无 .git，无法提供真实提交号；本次使用源文件 SHA256 和 implementation_hash 绑定版本，不虚构 Git 提交。
+implementation_hash：d844734439ed524fe81d843d0065a17510ebf161c5efc036f31cf4bb061cd4e3
+source_manifest.json 保存实验前源码摘要；source_snapshot/ 保存对应脚本、模拟器和测试源码。artifact_checks.json 校验源码未变、输入 hash、GPU UUID 映射和测量来源引用。
+commands.jsonl 保存每条正式执行命令、环境覆盖、开始/结束时间、退出码及超时；同名 .log 保存原始输出。python_packages.txt 保存全部解析版本。
+软件准备命令见 setup_python/setup_gpu_packages/setup_transformers 对应的 commands.jsonl 条目，安装包来自 PyTorch 官方 CUDA 12.8 索引及 Python 包索引。现有环境后续直接使用 var/owner_env/bin/python；不要使用上传的 macOS .venv。
+复跑请创建新 evidence/owner_* 输出目录，再按 Instructions.md 的 A1–A5 命令执行并替换解释器/输出目录，避免覆盖本次测量原件。CPU 故障复跑只需 Python 3.12/3.13。
+日志保留了 Transformers 默认损失函数提示，以及 NCCL barrier 未显式传 device_id 的提示。本次无超时，实际 rank UUID 映射与预期一致，所有求和与样本检查通过；未为消除提示修改原脚本。
+本轮未修改核心仿真或原 GPU 测量脚本。measurement_validation.json 的 19 项测量检查全部通过。
+组员交叉复核仍待进行，未冒充其他成员签字；原任务追踪表仅更新 D-A1、D-A2、D-A3。
+交接文件应整体携带，包括原始 JSON、输入与事件、日志和来源说明；不要只转发汇总数字。未执行真实多卡 DDP、真实 Qwen、跨 NUMA/四卡扫描、B/C 全套验收。

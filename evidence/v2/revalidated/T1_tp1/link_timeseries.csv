@@ -1,0 +1,17 @@
+﻿time_ms,resource_id,capacity_gbps,allocated_gbps,active_flows
+0.0,node:n0:local,200.0,0.0,0
+0.0,node:n0:rx,100.0,0.0,0
+0.0,node:n0:tx,100.0,0.0,0
+0.0,node:n1:local,200.0,0.0,0
+0.0,node:n1:rx,100.0,0.0,0
+0.0,node:n1:tx,100.0,0.0,0
+0.0,node:n2:local,200.0,0.0,0
+0.0,node:n2:rx,100.0,0.0,0
+0.0,node:n2:tx,100.0,0.0,0
+0.0,node:n3:local,200.0,0.0,0
+0.0,node:n3:rx,100.0,0.0,0
+0.0,node:n3:tx,100.0,0.0,0
+0.0,rack:r0:rx,50.0,0.0,0
+0.0,rack:r0:tx,50.0,0.0,0
+0.0,rack:r1:rx,50.0,0.0,0
+0.0,rack:r1:tx,50.0,0.0,0

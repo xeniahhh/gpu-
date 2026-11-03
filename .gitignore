@@ -1,0 +1,27 @@
+# Local Python environment
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Local tool state and rollback archives
+.codex-finalizer/
+.pnpm-store/
+backups/
+
+# Node and frontend output
+node_modules/
+dist/
+coverage/
+
+# Temporary files
+tmp/
+var/
+

@@ -1,0 +1,147 @@
+{
+  "recorded_at_utc": "2026-11-03T02:34:16.217483+00:00",
+  "kind": "LIVE_HTTP_ACCEPTANCE",
+  "base_url": "http://127.0.0.1:8000",
+  "simulation": {
+    "id": "sim-79c221255f904a28960c8f5ce37e50c7",
+    "input_hash": "6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea",
+    "status": "completed",
+    "implementation_hash": "d844734439ed524fe81d843d0065a17510ebf161c5efc036f31cf4bb061cd4e3",
+    "summary": {
+      "job_count": 2,
+      "completed_jobs": 2,
+      "unfinished_jobs": 0,
+      "unschedulable_jobs": 0,
+      "simulated_ms": 10721.332940800034,
+      "mean_completion_ms": 10721.332940800034,
+      "lost_steps": 0,
+      "restarts": 0
+    }
+  },
+  "checks": [
+    {
+      "name": "health is public",
+      "passed": true,
+      "detail": {
+        "status_code": 200,
+        "body": {
+          "status": "ok",
+          "service": "gateway",
+          "auth_mode": "bearer_roles"
+        }
+      }
+    },
+    {
+      "name": "workload page is served",
+      "passed": true,
+      "detail": {
+        "status_code": 200,
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "name": "anonymous scenario read is rejected",
+      "passed": true,
+      "detail": {
+        "status_code": 401
+      }
+    },
+    {
+      "name": "viewer can load scenarios",
+      "passed": true,
+      "detail": {
+        "status_code": 200,
+        "scenario_count": 14,
+        "selected": "ddp:competition"
+      }
+    },
+    {
+      "name": "viewer cannot submit",
+      "passed": true,
+      "detail": {
+        "status_code": 403
+      }
+    },
+    {
+      "name": "invalid input is rejected with 422",
+      "passed": true,
+      "detail": {
+        "status_code": 422,
+        "detail": "horizon_ms must be in [1, 60000]"
+      }
+    },
+    {
+      "name": "editor submission returns 202, id and input hash",
+      "passed": true,
+      "detail": {
+        "status_code": 202,
+        "id": "sim-79c221255f904a28960c8f5ce37e50c7",
+        "input_hash": "6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea",
+        "initial_status": "queued"
+      }
+    },
+    {
+      "name": "running record can be queried until terminal",
+      "passed": true,
+      "detail": {
+        "observed_statuses": [
+          "running",
+          "completed"
+        ],
+        "error": null
+      }
+    },
+    {
+      "name": "submitted input snapshot is frozen",
+      "passed": true,
+      "detail": {
+        "stored_horizon_ms": 20000,
+        "draft_horizon_ms_after_submit": 1
+      }
+    },
+    {
+      "name": "result remains bound to submitted input hash",
+      "passed": true,
+      "detail": {
+        "submitted": "6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea",
+        "stored": "6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea"
+      }
+    },
+    {
+      "name": "viewer can page completed event replay",
+      "passed": true,
+      "detail": {
+        "status_code": 200,
+        "mode": "completed_simulation_replay",
+        "total": 3914,
+        "returned": 5
+      }
+    },
+    {
+      "name": "viewer explain is read-only and evidence-referenced",
+      "passed": true,
+      "detail": {
+        "status_code": 200,
+        "mode": "rules_based_read_only",
+        "observation_count": 5,
+        "sources": [
+          "events[1306]",
+          "events[1308]",
+          "events[2610]",
+          "events[2612]",
+          "invariant_checks"
+        ]
+      }
+    },
+    {
+      "name": "unknown simulation id is explicitly rejected",
+      "passed": true,
+      "detail": {
+        "status_code": 404
+      }
+    }
+  ],
+  "passed": true,
+  "passed_count": 13,
+  "total_count": 13
+}

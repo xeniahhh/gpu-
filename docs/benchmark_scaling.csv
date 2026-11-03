@@ -1,0 +1,5 @@
+gpus,spines,leaves,nodes,links,generation_median_ms,validation_median_ms,placement_median_ms,evaluation_median_ms
+16,8,2,2,18,0.0339,0.0391,0.0387,0.0755
+64,8,4,8,40,0.0803,0.0896,0.1977,0.1181
+256,8,8,32,96,0.2404,0.264,0.8439,0.2522
+1024,8,16,128,256,0.8994,0.9852,3.4451,0.7151

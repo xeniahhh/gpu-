@@ -1,0 +1,89 @@
+{
+  "schema_version": 2,
+  "scenario": "tp",
+  "horizon_ms": 5000,
+  "topology": {
+    "nodes": [
+      {
+        "id": "n0",
+        "rack_id": "r0",
+        "gpu_count": 2,
+        "memory_gib": 16.5
+      },
+      {
+        "id": "n1",
+        "rack_id": "r0",
+        "gpu_count": 2,
+        "memory_gib": 24
+      },
+      {
+        "id": "n2",
+        "rack_id": "r1",
+        "gpu_count": 2,
+        "memory_gib": 24
+      },
+      {
+        "id": "n3",
+        "rack_id": "r1",
+        "gpu_count": 2,
+        "memory_gib": 24
+      }
+    ],
+    "node_bandwidth_gbps": 100,
+    "uplink_bandwidth_gbps": 50,
+    "local_bandwidth_gbps": 200,
+    "link_latency_us": 5,
+    "local_latency_us": 2
+  },
+  "model": {
+    "name": "Qwen2.5-7B-Instruct",
+    "parameter_count": 7610000000,
+    "parameter_source": "MODEL_CARD_ROUNDED",
+    "layers": 28,
+    "hidden_size": 3584,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "dtype_bytes": 2,
+    "max_context_tokens": 32768
+  },
+  "profile": {
+    "source": "SYNTHETIC",
+    "workspace_gib": 2,
+    "prefill_ms_per_token_by_tp": {
+      "1": 0.3,
+      "2": 0.2,
+      "4": 0.16
+    },
+    "decode_ms_per_token_by_tp": {
+      "1": 12.0,
+      "2": 8.0,
+      "4": 7.0
+    },
+    "model_reload_ms": 40.0
+  },
+  "replicas": [
+    {
+      "id": "replica-0",
+      "tp_size": 1,
+      "gpu_ids": [
+        "n0:gpu0"
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "request-1",
+      "arrival_ms": 0,
+      "prompt_tokens": 16000,
+      "max_new_tokens": 8
+    },
+    {
+      "id": "request-2",
+      "arrival_ms": 2,
+      "prompt_tokens": 64,
+      "max_new_tokens": 4
+    }
+  ],
+  "faults": []
+}

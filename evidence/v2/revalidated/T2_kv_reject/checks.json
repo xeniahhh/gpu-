@@ -1,0 +1,40 @@
+[
+  {
+    "name": "replica_gpu_exclusivity",
+    "passed": true,
+    "detail": "validated 1 distinct assigned GPUs"
+  },
+  {
+    "name": "memory_capacity",
+    "passed": true,
+    "detail": "5 admission/token checks; 0 violations"
+  },
+  {
+    "name": "output_token_limit",
+    "passed": true,
+    "detail": "4 observed token commits"
+  },
+  {
+    "name": "kv_growth",
+    "passed": true,
+    "detail": "4 KV updates checked"
+  },
+  {
+    "name": "link_capacity",
+    "passed": true,
+    "detail": "maximum observed ratio=0.0"
+  },
+  {
+    "name": "failed_requests_not_completed",
+    "passed": true,
+    "detail": "0 interrupted requests; no retry/resume implemented"
+  },
+  {
+    "name": "scenario_kv_rejected_without_starvation",
+    "passed": true,
+    "detail": [
+      "rejected",
+      "completed"
+    ]
+  }
+]

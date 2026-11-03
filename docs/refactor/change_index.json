@@ -1,0 +1,195 @@
+{
+  "note": "Comparison to user-specified original; includes prior baseline plus this final audit. Not a claim that all changes were authored in this turn.",
+  "files": [
+    {
+      "path": "packages/fabric-sim/src/fabric_sim/ddp.py",
+      "change_from_original": "added",
+      "sha256": "1b2ad0e2e971f0cc56e53b54317414b623e7985d26a9a5845c1ff9b1fa1fd53b"
+    },
+    {
+      "path": "packages/fabric-sim/src/fabric_sim/__init__.py",
+      "change_from_original": "added",
+      "sha256": "c9c0271b62b0dacf146a912c9b89ef435e451fac8cd92963254ce8b35145d7ff"
+    },
+    {
+      "path": "packages/fabric-sim/src/fabric_sim/core.py",
+      "change_from_original": "added",
+      "sha256": "12715a165f272169d9a871935ff48fb3e69841c4a41e11b6eec4a80d590de86e"
+    },
+    {
+      "path": "packages/fabric-sim/src/fabric_sim/tp.py",
+      "change_from_original": "added",
+      "sha256": "c05234f0b5d910f93e1e3bd1fc5b4e1f21440f84d7ecd2e7d27db288828b2085"
+    },
+    {
+      "path": "packages/fabric-sim/src/fabric_sim/validation.py",
+      "change_from_original": "added",
+      "sha256": "84f5219263858aa1ed157428d79ee21eef50dd0075b60d2312349d3d670710f5"
+    },
+    {
+      "path": "services/gateway/src/gateway/simulation_api.py",
+      "change_from_original": "added",
+      "sha256": "634fa57788b9a9561eeef0e20cbba0669d269af6bdb9ef121bbc0958cf232ad6"
+    },
+    {
+      "path": "services/gateway/src/gateway/assistant.py",
+      "change_from_original": "added",
+      "sha256": "3ddd494a153cc24845960d314720c35b0a49fd2066d7a5fa0ec0237270c0ac37"
+    },
+    {
+      "path": "services/gateway/src/gateway/security.py",
+      "change_from_original": "added",
+      "sha256": "9df0d60b8f37d5b58dd7b0fe259b0da5243132ac4390a10e2b4c18aa55041a47"
+    },
+    {
+      "path": "services/gateway/src/gateway/runtime.py",
+      "change_from_original": "changed",
+      "sha256": "dcccef4cb651ae92e97008689a3053506ea2f7e9ecb440871355733908aff649"
+    },
+    {
+      "path": "services/gateway/src/gateway/api.py",
+      "change_from_original": "changed",
+      "sha256": "1f65732a373587b20e408268de2475353f441e1b5e3b439a4b7e4cc19921268a"
+    },
+    {
+      "path": "scripts/profile_gpu_workload.py",
+      "change_from_original": "added",
+      "sha256": "d350c3e71906e976d137b8403139fbb41b397c99b788b02cffaad12044456d53"
+    },
+    {
+      "path": "scripts/run_v2_experiments.py",
+      "change_from_original": "added",
+      "sha256": "50496a2866586b8b00af5a4218ad2af26cb7c6dcaf9b100048dec0cf816f47c1"
+    },
+    {
+      "path": "scripts/run_tests.py",
+      "change_from_original": "changed",
+      "sha256": "0ab0416ba343b3fe43ff22a381227ae2c1826cee33569113c69cc637a394ac6f"
+    },
+    {
+      "path": "scripts/run_workload.py",
+      "change_from_original": "added",
+      "sha256": "74a99f640b2916eb42f0980750d9e5b6ed13f926422c0fcc865bce2c2adc17dd"
+    },
+    {
+      "path": "scripts/serve_workloads.py",
+      "change_from_original": "added",
+      "sha256": "f0da259e9d10f270cf5f6d236c2f3a45c52f6739f9ea5ec32b24096f541c8cfe"
+    },
+    {
+      "path": "scripts/benchmark_review.py",
+      "change_from_original": "added",
+      "sha256": "dab2e9e13686e4f561c14c0c7df537d44afcfc8a398a505dec69b32bb177bb1b"
+    },
+    {
+      "path": "scripts/start_gateway.py",
+      "change_from_original": "changed",
+      "sha256": "808c1bda7502cc2c3c7c9652217b2177bffc1b35890334ef1e001628dc9db763"
+    },
+    {
+      "path": "tests/simulation/test_contract_v2.py",
+      "change_from_original": "added",
+      "sha256": "99dea2016c47199cc10e8ae0dd58f00830ebb508594158eb7438a3330c1cf839"
+    },
+    {
+      "path": "tests/simulation/test_tp_v2.py",
+      "change_from_original": "added",
+      "sha256": "44ef023713d5b1c07853a0d0c3c03ead676564728beb634d671bdb83f5ed7d88"
+    },
+    {
+      "path": "tests/simulation/test_cross_scenario_v2.py",
+      "change_from_original": "added",
+      "sha256": "3d5e7e554021b3be3ade6a68b354f018d677b7428ab05384e8a885d93679a031"
+    },
+    {
+      "path": "tests/simulation/test_core_v2.py",
+      "change_from_original": "added",
+      "sha256": "763afc57acceae76865b31a6174dc30a5e9ef5302f3dd02be5a96d723a5aa7e3"
+    },
+    {
+      "path": "tests/simulation/__init__.py",
+      "change_from_original": "added",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/simulation/test_ddp_v2.py",
+      "change_from_original": "added",
+      "sha256": "a4d6c7b0dd8e39c75ec9eb7cee694470971603964de552473d8cfa4cbcabfe34"
+    },
+    {
+      "path": "tests/simulation/test_api_v2.py",
+      "change_from_original": "added",
+      "sha256": "089ce967e4c04e22731baeb3efd387398b2c8d6c40ce75a2eb596fb380676d8d"
+    },
+    {
+      "path": "docs/refactor/任务分派追踪表.csv",
+      "change_from_original": "added",
+      "sha256": "db26d9952e9acbac87f320bb4298d185ef8247ad461e84a59a1ff5c6a6e703f1"
+    },
+    {
+      "path": "docs/refactor/architecture_report.md",
+      "change_from_original": "added",
+      "sha256": "a1494dfdc9124a09171bf6e72669b148dc74697e151a1ae54da6f6de885e3423"
+    },
+    {
+      "path": "docs/refactor/GPU_EXECUTION.md",
+      "change_from_original": "added",
+      "sha256": "88d36e560f90f19035c92ea988454c0a9c7df83f8a191f0d77f3087350032ca4"
+    },
+    {
+      "path": "docs/refactor/IMPLEMENTATION_CONTRACT.md",
+      "change_from_original": "added",
+      "sha256": "ffa22b6cc3f1e9bc5615745c50d72a88a4dab3de8faf410da103c874e2b620bf"
+    },
+    {
+      "path": "docs/refactor/case1_tasks.md",
+      "change_from_original": "added",
+      "sha256": "8947421494a47860e3be1b9cfb4d3afcb9f5fd2eaed67b017dc7e352e4271fa0"
+    },
+    {
+      "path": "docs/refactor/rubric_mapping.md",
+      "change_from_original": "added",
+      "sha256": "e15739be51f3a86b5041b5956e19e7a035febb056adf037947fee3dc317b55f5"
+    },
+    {
+      "path": "docs/refactor/DELIVERY.md",
+      "change_from_original": "added",
+      "sha256": "2a1eb3e6b3f398f122b47323a17d12f5a590eaf58f8b9795e23793fbcf038b70"
+    },
+    {
+      "path": "docs/refactor/architecture_report.pdf",
+      "change_from_original": "added",
+      "sha256": "c0eec0f73110a12746fca91f658c95775054129c43ad882f79f41cf45cef5025"
+    },
+    {
+      "path": "docs/refactor/case2_tasks.md",
+      "change_from_original": "added",
+      "sha256": "fe28643663508f32218eed47b4da6cd504434bb744f7e9c24f6d3d8996e1c082"
+    },
+    {
+      "path": "apps/web/build-offline.mjs",
+      "change_from_original": "added",
+      "sha256": "c2d5ed015d0dd77e297454c046a6f2606bfa9ee95a9de4e4940c2a27aa04d5a2"
+    },
+    {
+      "path": "apps/web/workload.html",
+      "change_from_original": "added",
+      "sha256": "5e8057b9575aa90cc704a4e23446e9c3af628a1d46a7bec1f062c8c3a4018c89"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "change_from_original": "changed",
+      "sha256": "4ef76b90439d045e6f32b38f73e0682fabfec1377b596dfea4efae98795ebf20"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "change_from_original": "changed",
+      "sha256": "a5118f18423e6bc3d13f4b435afa71479e506aa52b07b11fd1a19fbb2e87b3c2"
+    },
+    {
+      "path": "apps/web/src/api.ts",
+      "change_from_original": "changed",
+      "sha256": "8b05ba1a1653cfad4ea56cc9e3f9ac3593ebcf483b4fbccbdbd1e262f1e86e5e"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 2,
+  "scenario": "ddp",
+  "topology": {
+    "nodes": [
+      {
+        "id": "n0",
+        "rack_id": "r0",
+        "gpu_count": 2,
+        "memory_gib": 24
+      },
+      {
+        "id": "n1",
+        "rack_id": "r0",
+        "gpu_count": 2,
+        "memory_gib": 24
+      },
+      {
+        "id": "n2",
+        "rack_id": "r1",
+        "gpu_count": 2,
+        "memory_gib": 24
+      },
+      {
+        "id": "n3",
+        "rack_id": "r1",
+        "gpu_count": 2,
+        "memory_gib": 24
+      }
+    ],
+    "node_bandwidth_gbps": 100,
+    "uplink_bandwidth_gbps": 50,
+    "local_bandwidth_gbps": 200,
+    "link_latency_us": 5,
+    "local_latency_us": 2
+  },
+  "horizon_ms": 20000,
+  "placement_policy": "compact",
+  "profile": {
+    "source": "SYNTHETIC"
+  },
+  "jobs": [
+    {
+      "id": "A",
+      "world_size": 4,
+      "steps": 30,
+      "checkpoint_interval": 10,
+      "gpu_ids": [
+        "n0:gpu0",
+        "n0:gpu1",
+        "n1:gpu0",
+        "n1:gpu1"
+      ]
+    },
+    {
+      "id": "B",
+      "world_size": 2,
+      "steps": 30,
+      "checkpoint_interval": 10,
+      "gpu_ids": [
+        "n2:gpu0",
+        "n2:gpu1"
+      ]
+    }
+  ],
+  "faults": [
+    {
+      "at_ms": 3000,
+      "type": "node_down",
+      "target_id": "n0"
+    }
+  ],
+  "demo_variant": "fault_spare"
+}

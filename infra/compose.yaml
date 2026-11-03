@@ -1,0 +1,74 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-fabric_sandbox}
+      POSTGRES_USER: ${POSTGRES_USER:-fabric}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fabric_dev_only}
+    volumes:
+      - fabric-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+
+  nats:
+    image: nats:2.10-alpine
+    command: ["-c", "/etc/nats/nats.conf"]
+    volumes:
+      - ./nats.conf:/etc/nats/nats.conf:ro
+      - fabric-nats:/data
+    ports:
+      - "127.0.0.1:${NATS_PORT:-4222}:4222"
+      - "127.0.0.1:${NATS_MONITOR_PORT:-8222}:8222"
+
+  evaluator:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    command: ["python", "-m", "evaluator.nats_worker"]
+    environment:
+      NATS_URL: nats://nats:4222
+    depends_on:
+      - nats
+    deploy:
+      replicas: 2
+    profiles: ["nats-workers"]
+
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    environment:
+      FABRIC_SANDBOX_ENV: compose
+      FABRIC_EDITOR_TOKEN: ${FABRIC_EDITOR_TOKEN:?Set FABRIC_EDITOR_TOKEN to a random secret of at least 24 ASCII characters}
+      FABRIC_VIEWER_TOKEN: ${FABRIC_VIEWER_TOKEN:-}
+      LOG_LEVEL: INFO
+      REVISION_STORE: postgres
+      DATABASE_URL: postgresql://${POSTGRES_USER:-fabric}:${POSTGRES_PASSWORD:-fabric_dev_only}@postgres:5432/${POSTGRES_DB:-fabric_sandbox}
+      NATS_URL: nats://nats:4222
+    depends_on:
+      postgres:
+        condition: service_healthy
+      nats:
+        condition: service_started
+    ports:
+      - "127.0.0.1:${API_PORT:-8000}:8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  fabric-postgres:
+  fabric-nats:

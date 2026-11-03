@@ -1,0 +1,296 @@
+{
+  "status": "COMPLETED",
+  "source": "MEASURED",
+  "kind": "gpt2_compute_profile",
+  "model": "GPT-2 Small, random initialization",
+  "config": {
+    "vocab_size": 50257,
+    "n_positions": 1024,
+    "n_embd": 768,
+    "n_layer": 12,
+    "n_head": 12,
+    "n_inner": 3072,
+    "activation_function": "gelu_new",
+    "resid_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "attn_pdrop": 0.1,
+    "layer_norm_epsilon": 1e-05,
+    "initializer_range": 0.02,
+    "summary_type": "cls_index",
+    "summary_use_proj": true,
+    "summary_activation": null,
+    "summary_first_dropout": 0.1,
+    "summary_proj_to_labels": true,
+    "scale_attn_weights": true,
+    "use_cache": false,
+    "scale_attn_by_inverse_layer_idx": false,
+    "reorder_and_upcast_attn": false,
+    "bos_token_id": 50256,
+    "eos_token_id": 50256,
+    "return_dict": true,
+    "output_hidden_states": false,
+    "output_attentions": false,
+    "torchscript": false,
+    "torch_dtype": null,
+    "use_bfloat16": false,
+    "tf_legacy_loss": false,
+    "pruned_heads": {},
+    "tie_word_embeddings": true,
+    "chunk_size_feed_forward": 0,
+    "is_encoder_decoder": false,
+    "is_decoder": false,
+    "cross_attention_hidden_size": null,
+    "add_cross_attention": false,
+    "tie_encoder_decoder": false,
+    "max_length": 20,
+    "min_length": 0,
+    "do_sample": false,
+    "early_stopping": false,
+    "num_beams": 1,
+    "num_beam_groups": 1,
+    "diversity_penalty": 0.0,
+    "temperature": 1.0,
+    "top_k": 50,
+    "top_p": 1.0,
+    "typical_p": 1.0,
+    "repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "encoder_no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "num_return_sequences": 1,
+    "output_scores": false,
+    "return_dict_in_generate": false,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "architectures": null,
+    "finetuning_task": null,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "tokenizer_class": null,
+    "prefix": null,
+    "pad_token_id": null,
+    "sep_token_id": null,
+    "decoder_start_token_id": null,
+    "task_specific_params": null,
+    "problem_type": null,
+    "_name_or_path": "",
+    "transformers_version": "4.52.4",
+    "n_ctx": 1024,
+    "model_type": "gpt2"
+  },
+  "parameter_count": 124439808,
+  "gradient_bytes": 497759232,
+  "parameter_dtype": "float32",
+  "gradient_dtype": "float32",
+  "optimizer": "AdamW(foreach=False)",
+  "local_batch": 1,
+  "sequence_length": 512,
+  "seed": 20261102,
+  "warmup": 5,
+  "repeat": 20,
+  "memory": {
+    "peak_allocated_bytes": 2406882304,
+    "peak_reserved_bytes": 2749366272,
+    "configured_margin_bytes": 1073741824,
+    "admission_budget_bytes": 3823108096
+  },
+  "timing": {
+    "forward_backward_ms": {
+      "count": 20,
+      "median_ms": 34.48729705810547,
+      "min_ms": 33.91999816894531,
+      "max_ms": 37.85728073120117,
+      "mean_ms": 35.703602981567386,
+      "stdev_ms": 1.6409687745207266,
+      "p95_ms": 37.614593505859375
+    },
+    "optimizer_ms": {
+      "count": 20,
+      "median_ms": 15.213056087493896,
+      "min_ms": 13.809663772583008,
+      "max_ms": 20.748287200927734,
+      "mean_ms": 16.75504641532898,
+      "stdev_ms": 3.0951629772201703,
+      "p95_ms": 20.694015502929688
+    },
+    "cuda_step_ms": {
+      "count": 20,
+      "median_ms": 51.678720474243164,
+      "min_ms": 47.80646514892578,
+      "max_ms": 58.12838363647461,
+      "mean_ms": 52.45864982604981,
+      "stdev_ms": 4.4174568712635,
+      "p95_ms": 58.089473724365234
+    },
+    "wall_step_ms": {
+      "count": 20,
+      "median_ms": 51.71136278659105,
+      "min_ms": 47.832608222961426,
+      "max_ms": 58.1792164593935,
+      "mean_ms": 52.49663833528757,
+      "stdev_ms": 4.4281692835793045,
+      "p95_ms": 58.13930742442608
+    }
+  },
+  "samples": [
+    {
+      "forward_backward_ms": 34.32447814941406,
+      "optimizer_ms": 13.901823997497559,
+      "cuda_step_ms": 48.22630310058594,
+      "wall_step_ms": 48.25258255004883
+    },
+    {
+      "forward_backward_ms": 33.99679946899414,
+      "optimizer_ms": 13.809663772583008,
+      "cuda_step_ms": 47.80646514892578,
+      "wall_step_ms": 47.832608222961426
+    },
+    {
+      "forward_backward_ms": 33.91999816894531,
+      "optimizer_ms": 13.962240219116211,
+      "cuda_step_ms": 47.882240295410156,
+      "wall_step_ms": 47.90786653757095
+    },
+    {
+      "forward_backward_ms": 34.23231887817383,
+      "optimizer_ms": 13.904895782470703,
+      "cuda_step_ms": 48.13721466064453,
+      "wall_step_ms": 48.16330410540104
+    },
+    {
+      "forward_backward_ms": 34.29171371459961,
+      "optimizer_ms": 13.954048156738281,
+      "cuda_step_ms": 48.24576187133789,
+      "wall_step_ms": 48.271775245666504
+    },
+    {
+      "forward_backward_ms": 34.35929489135742,
+      "optimizer_ms": 13.875200271606445,
+      "cuda_step_ms": 48.2344970703125,
+      "wall_step_ms": 48.26257564127445
+    },
+    {
+      "forward_backward_ms": 33.990657806396484,
+      "optimizer_ms": 13.954048156738281,
+      "cuda_step_ms": 47.9447021484375,
+      "wall_step_ms": 47.970643267035484
+    },
+    {
+      "forward_backward_ms": 34.46476745605469,
+      "optimizer_ms": 13.89568042755127,
+      "cuda_step_ms": 48.36044692993164,
+      "wall_step_ms": 48.386095091700554
+    },
+    {
+      "forward_backward_ms": 34.482177734375,
+      "optimizer_ms": 16.150527954101562,
+      "cuda_step_ms": 50.63270568847656,
+      "wall_step_ms": 50.67632533609867
+    },
+    {
+      "forward_backward_ms": 37.614593505859375,
+      "optimizer_ms": 14.023679733276367,
+      "cuda_step_ms": 51.63827133178711,
+      "wall_step_ms": 51.671022549271584
+    },
+    {
+      "forward_backward_ms": 34.38284683227539,
+      "optimizer_ms": 17.992704391479492,
+      "cuda_step_ms": 52.375553131103516,
+      "wall_step_ms": 52.41835303604603
+    },
+    {
+      "forward_backward_ms": 37.44358444213867,
+      "optimizer_ms": 14.27558422088623,
+      "cuda_step_ms": 51.71916961669922,
+      "wall_step_ms": 51.75170302391052
+    },
+    {
+      "forward_backward_ms": 34.49241638183594,
+      "optimizer_ms": 17.561599731445312,
+      "cuda_step_ms": 52.05401611328125,
+      "wall_step_ms": 52.097054198384285
+    },
+    {
+      "forward_backward_ms": 37.48863983154297,
+      "optimizer_ms": 20.583423614501953,
+      "cuda_step_ms": 58.07206344604492,
+      "wall_step_ms": 58.122748509049416
+    },
+    {
+      "forward_backward_ms": 37.43436813354492,
+      "optimizer_ms": 20.694015502929688,
+      "cuda_step_ms": 58.12838363647461,
+      "wall_step_ms": 58.1792164593935
+    },
+    {
+      "forward_backward_ms": 37.341182708740234,
+      "optimizer_ms": 20.748287200927734,
+      "cuda_step_ms": 58.089473724365234,
+      "wall_step_ms": 58.13930742442608
+    },
+    {
+      "forward_backward_ms": 37.85728073120117,
+      "optimizer_ms": 20.135936737060547,
+      "cuda_step_ms": 57.99321746826172,
+      "wall_step_ms": 58.043817058205605
+    },
+    {
+      "forward_backward_ms": 37.42617416381836,
+      "optimizer_ms": 20.551679611206055,
+      "cuda_step_ms": 57.97785568237305,
+      "wall_step_ms": 58.028819039464
+    },
+    {
+      "forward_backward_ms": 37.19987106323242,
+      "optimizer_ms": 20.593664169311523,
+      "cuda_step_ms": 57.79353713989258,
+      "wall_step_ms": 57.84486047923565
+    },
+    {
+      "forward_backward_ms": 37.328895568847656,
+      "optimizer_ms": 20.532224655151367,
+      "cuda_step_ms": 57.86111831665039,
+      "wall_step_ms": 57.91208893060684
+    }
+  ],
+  "metadata": {
+    "python": "3.12.15",
+    "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+    "torch": "2.7.1+cu128",
+    "cuda_runtime": "12.8",
+    "cuda_visible_devices": "0",
+    "nccl_environment": {},
+    "transformers": "4.52.4",
+    "gpu_inventory": "GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-3d1e15ec-0e85-c4cd-48f6-526a8f9f6c9f)\nGPU 1: NVIDIA GeForce RTX 3090 (UUID: GPU-f185ee28-db58-aae3-6458-656afb88d4fb)\nGPU 2: NVIDIA GeForce RTX 3090 (UUID: GPU-bdd3f8ec-e0cb-2756-f0a7-655a99a1fd20)\nGPU 3: NVIDIA GeForce RTX 3090 (UUID: GPU-2fb23e11-9006-38fd-cda0-7099d1fd5a6b)\nGPU 4: NVIDIA GeForce RTX 3090 (UUID: GPU-58e21d15-ad10-156e-eedb-33e3f0460c8b)\nGPU 5: NVIDIA GeForce RTX 3090 (UUID: GPU-3a451408-1bde-6c6d-138a-af1f34860b5f)\nGPU 6: NVIDIA GeForce RTX 3090 (UUID: GPU-e849c070-c50c-bd96-9578-5101c1ce216f)\nGPU 7: NVIDIA GeForce RTX 3090 (UUID: GPU-36e77572-8782-5f42-39d8-a73c1f643d7f)\n",
+    "topology": "\t\u001b[4mGPU0\tGPU1\tGPU2\tGPU3\tGPU4\tGPU5\tGPU6\tGPU7\tCPU Affinity\tNUMA Affinity\tGPU NUMA ID\u001b[0m\nGPU0\t X \tNODE\tNODE\tNODE\tSYS\tSYS\tSYS\tSYS\t0-31,64-95\t0\t\tN/A\nGPU1\tNODE\t X \tNODE\tNODE\tSYS\tSYS\tSYS\tSYS\t0-31,64-95\t0\t\tN/A\nGPU2\tNODE\tNODE\t X \tNODE\tSYS\tSYS\tSYS\tSYS\t0-31,64-95\t0\t\tN/A\nGPU3\tNODE\tNODE\tNODE\t X \tSYS\tSYS\tSYS\tSYS\t0-31,64-95\t0\t\tN/A\nGPU4\tSYS\tSYS\tSYS\tSYS\t X \tNODE\tNODE\tNODE\t32-63,96-127\t1\t\tN/A\nGPU5\tSYS\tSYS\tSYS\tSYS\tNODE\t X \tNODE\tNODE\t32-63,96-127\t1\t\tN/A\nGPU6\tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\t X \tNODE\t32-63,96-127\t1\t\tN/A\nGPU7\tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\tNODE\t X \t32-63,96-127\t1\t\tN/A\n\nLegend:\n\n  X    = Self\n  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)\n  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node\n  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)\n  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)\n  PIX  = Connection traversing at most a single PCIe bridge\n  NV#  = Connection traversing a bonded set of # NVLinks\n"
+  },
+  "device": {
+    "logical_device": 0,
+    "name": "NVIDIA GeForce RTX 3090",
+    "total_memory_bytes": 25307578368,
+    "uuid": "3d1e15ec-0e85-c4cd-48f6-526a8f9f6c9f",
+    "compute_capability": [
+      8,
+      6
+    ]
+  },
+  "limitations": [
+    "Synthetic tokens and random weights test system load, not model quality.",
+    "No DDP gradient buckets are allocated in this single-GPU measurement.",
+    "PyTorch reserved memory does not include all framework-external/NCCL allocations; the margin is a stated policy, not a measurement.",
+    "Do not replace measured DDP iteration time by a sum of these times and standalone AllReduce; overlap differs."
+  ],
+  "recorded_at_utc": "2026-11-02T17:48:07.314376+00:00"
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "task": "C",
+  "scope": "HTTP, permissions, immutable snapshot, event replay, read-only explain, persistence",
+  "scenario_id": "tp:competition",
+  "rejection_scenario_id": "tp:kv_reject",
+  "tested_at": "2026-11-03T03:22:16.632664+00:00",
+  "base_url": "http://127.0.0.1:8767",
+  "python": "3.13.12",
+  "accepted_run_id": "sim-125bf66e039640efb69968abf54b487d",
+  "business_rejection_run_id": "sim-1e2ccab3bb8849909e3583234efe6c9f",
+  "checks": [
+    {
+      "name": "health_without_token",
+      "passed": true,
+      "detail": "health endpoint is public",
+      "actual": {
+        "status_code": 200,
+        "body": {
+          "status": "ok",
+          "service": "gateway",
+          "auth_mode": "bearer_roles"
+        }
+      }
+    },
+    {
+      "name": "workload_page_served",
+      "passed": true,
+      "detail": "standalone workload page is served by Gateway",
+      "actual": {
+        "status_code": 200,
+        "content_type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "name": "anonymous_read_rejected",
+      "passed": true,
+      "detail": "bearer mode rejects an unauthenticated read",
+      "actual": {
+        "status_code": 401
+      }
+    },
+    {
+      "name": "unknown_token_rejected",
+      "passed": true,
+      "detail": "an unknown bearer token never inherits local editor access",
+      "actual": {
+        "status_code": 401
+      }
+    },
+    {
+      "name": "viewer_can_read_scenarios",
+      "passed": true,
+      "detail": "viewer can read scenario definitions",
+      "actual": {
+        "count": 14
+      }
+    },
+    {
+      "name": "viewer_write_rejected",
+      "passed": true,
+      "detail": "viewer may read and explain but may not create a run",
+      "actual": {
+        "status_code": 403
+      }
+    },
+    {
+      "name": "invalid_input_rejected",
+      "passed": true,
+      "detail": "malformed simulation input is controlled by the API",
+      "actual": {
+        "status_code": 422,
+        "detail": "schema_version must be 2"
+      }
+    },
+    {
+      "name": "editor_submit_accepted",
+      "passed": true,
+      "detail": "editor receives an asynchronous run identifier",
+      "actual": {
+        "status_code": 202,
+        "body": {
+          "id": "sim-125bf66e039640efb69968abf54b487d",
+          "status": "queued",
+          "input_hash": "16e532a96e3f40bc78461f6aef233812acd3abada01b74a7de43ba266b46a7a3"
+        }
+      }
+    },
+    {
+      "name": "service_run_completed",
+      "passed": true,
+      "detail": "the service completed its simulation evaluation",
+      "actual": {
+        "status": "completed",
+        "error": null
+      }
+    },
+    {
+      "name": "submission_hash_preserved",
+      "passed": true,
+      "detail": "the returned and persisted hashes identify the frozen input",
+      "actual": {
+        "submitted_hash": "16e532a96e3f40bc78461f6aef233812acd3abada01b74a7de43ba266b46a7a3",
+        "stored_hash": "16e532a96e3f40bc78461f6aef233812acd3abada01b74a7de43ba266b46a7a3"
+      }
+    },
+    {
+      "name": "stored_snapshot_not_mutated",
+      "passed": true,
+      "detail": "changing the client request object after submission does not change stored input",
+      "actual": {
+        "stored_item_id": "request-1"
+      }
+    },
+    {
+      "name": "completed_event_replay_available",
+      "passed": true,
+      "detail": "events are exposed as a completed-simulation replay",
+      "actual": {
+        "mode": "completed_simulation_replay",
+        "total": 11682,
+        "returned": 500
+      }
+    },
+    {
+      "name": "viewer_explain_is_read_only",
+      "passed": true,
+      "detail": "rules explanation cites the run and leaves stored state unchanged",
+      "actual": {
+        "mode": "rules_based_read_only",
+        "observations": 2,
+        "first_source": "summary"
+      }
+    },
+    {
+      "name": "business_rejection_is_completed_service_run",
+      "passed": true,
+      "detail": "HTTP/service completion is distinct from business job success",
+      "actual": {
+        "service_status": "completed",
+        "job_states": [
+          "rejected",
+          "completed"
+        ]
+      }
+    },
+    {
+      "name": "accepted_runs_are_listed",
+      "passed": true,
+      "detail": "persisted run is discoverable through the query endpoint",
+      "actual": {
+        "recent_count": 3,
+        "record_id": "sim-125bf66e039640efb69968abf54b487d"
+      }
+    }
+  ],
+  "passed": true,
+  "notes": [
+    "Synthetic simulation parameters are not GPU measurements.",
+    "Tokens are intentionally omitted from this evidence file.",
+    "A service-completed run may still contain rejected, failed, or unschedulable business work."
+  ]
+}

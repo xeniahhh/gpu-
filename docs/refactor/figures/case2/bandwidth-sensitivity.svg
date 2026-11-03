@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">上联带宽对单请求时延的影响</title>
+  <desc id="desc">只改变机架上联带宽，请求和计算 profile 保持不变。</desc>
+  <rect x="0" y="0" width="1000" height="520" rx="0" fill="#f3f6f8" stroke="none" stroke-width="0" opacity="1"/>
+  <text x="56" y="58" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="27" font-weight="700" fill="#18364f" text-anchor="start">上联带宽对单请求时延的影响</text>
+  <text x="56" y="83" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#c76823" text-anchor="start">Qwen2.5-7B TP 案例 | 数据来源 SYNTHETIC | 不是 GPU 实测</text>
+  <line x1="56" y1="105" x2="944" y2="105" stroke="#d8e1e6" stroke-width="1"/>
+  <line x1="105" y1="150" x2="905" y2="150" stroke="#d8e1e6" stroke-width="1"/>
+<text x="90" y="155" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#617385" text-anchor="end">100</text>
+<line x1="105" y1="199" x2="905" y2="199" stroke="#d8e1e6" stroke-width="1"/>
+<text x="90" y="204" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#617385" text-anchor="end">80</text>
+<line x1="105" y1="248" x2="905" y2="248" stroke="#d8e1e6" stroke-width="1"/>
+<text x="90" y="253" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#617385" text-anchor="end">60</text>
+<line x1="105" y1="297" x2="905" y2="297" stroke="#d8e1e6" stroke-width="1"/>
+<text x="90" y="302" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#617385" text-anchor="end">40</text>
+<line x1="105" y1="346" x2="905" y2="346" stroke="#d8e1e6" stroke-width="1"/>
+<text x="90" y="351" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#617385" text-anchor="end">20</text>
+<line x1="105" y1="395" x2="905" y2="395" stroke="#d8e1e6" stroke-width="1"/>
+<text x="90" y="400" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#617385" text-anchor="end">0</text>
+<line x1="105" y1="150" x2="105" y2="395" stroke="#afbec8" stroke-width="1.4"/>
+<line x1="105" y1="395" x2="905" y2="395" stroke="#afbec8" stroke-width="1.4"/>
+<text transform="rotate(-90 58 272.5)" x="58" y="272.5" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#617385" text-anchor="middle">时延 (ms)</text>
+<line x1="105" y1="395" x2="105" y2="401" stroke="#afbec8" stroke-width="1"/>
+<text x="105" y="425" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#233a4c" text-anchor="middle">25</text>
+<line x1="371.66666666666663" y1="395" x2="371.66666666666663" y2="401" stroke="#afbec8" stroke-width="1"/>
+<text x="371.66666666666663" y="425" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#233a4c" text-anchor="middle">50</text>
+<line x1="905" y1="395" x2="905" y2="401" stroke="#afbec8" stroke-width="1"/>
+<text x="905" y="425" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="15" font-weight="400" fill="#233a4c" text-anchor="middle">100</text>
+<polyline points="105,246.2278087680001 371.66666666666663,286.5099043839999 905,306.6509521920001" fill="none" stroke="#087f8c" stroke-width="3"/>
+<circle cx="105" cy="246.2278087680001" r="6" fill="#087f8c"/>
+<text x="115" y="232.2278087680001" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#087f8c" text-anchor="start">60.7</text>
+<circle cx="371.66666666666663" cy="286.5099043839999" r="6" fill="#087f8c"/>
+<text x="371.66666666666663" y="272.5099043839999" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#087f8c" text-anchor="middle">44.3</text>
+<circle cx="905" cy="306.6509521920001" r="6" fill="#087f8c"/>
+<text x="895" y="292.6509521920001" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#087f8c" text-anchor="end">36.1</text>
+<line x1="220" y1="127" x2="248" y2="127" stroke="#087f8c" stroke-width="3"/>
+<circle cx="234" cy="127" r="5" fill="#087f8c"/>
+<text x="258" y="132" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="start">平均 TTFT</text>
+<polyline points="105,169.07558553600364 371.66666666666663,210.3017927680012 905,230.91489638399992" fill="none" stroke="#c76823" stroke-width="3"/>
+<circle cx="105" cy="169.07558553600364" r="6" fill="#c76823"/>
+<text x="115" y="155.07558553600364" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#c76823" text-anchor="start">92.2</text>
+<circle cx="371.66666666666663" cy="210.3017927680012" r="6" fill="#c76823"/>
+<text x="371.66666666666663" y="196.3017927680012" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#c76823" text-anchor="middle">75.4</text>
+<circle cx="905" cy="230.91489638399992" r="6" fill="#c76823"/>
+<text x="895" y="216.91489638399992" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#c76823" text-anchor="end">67.0</text>
+<line x1="470" y1="127" x2="498" y2="127" stroke="#c76823" stroke-width="3"/>
+<circle cx="484" cy="127" r="5" fill="#c76823"/>
+<text x="508" y="132" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="start">最后完成</text>
+<text x="105" y="459" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#617385" text-anchor="start">25 到 100 Gbps 时 TTFT 下降，说明共享链路限制进入结果；仍是合成流量。</text>
+  <text x="56" y="490" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="start">证据：team_1103_tp_extra/bandwidth_*；仅改变 uplink_bandwidth_gbps。</text>
+</svg>

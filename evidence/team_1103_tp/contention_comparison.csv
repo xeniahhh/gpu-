@@ -1,0 +1,5 @@
+﻿job_id,solo_case,shared_case,metric,solo_ms,shared_ms,ratio
+request-1,T2_A_alone,T2_pair_control,ttft_ms,36.06083583999997,44.28167168000004,1.227971305947413
+request-1,T2_A_alone,T2_pair_control,latency_ms,66.97351168000003,75.3870233599995,1.1256244665831365
+request-2,T2_B_alone,T2_pair_control,ttft_ms,36.06083583999997,44.28167168000004,1.227971305947413
+request-2,T2_B_alone,T2_pair_control,latency_ms,66.97351168000003,75.3870233599995,1.1256244665831365

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fabric-sandbox.local/schemas/job-v1.schema.json",
+  "title": "Training job v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "requested_gpus", "communication_mode", "priority"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "requested_gpus": {"type": "integer", "minimum": 1},
+    "communication_mode": {
+      "enum": ["ring_all_reduce", "all_to_all"]
+    },
+    "priority": {"type": "integer"}
+  }
+}

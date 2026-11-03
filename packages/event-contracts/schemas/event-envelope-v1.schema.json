@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fabric-sandbox.local/schemas/event-envelope-v1.schema.json",
+  "title": "Service event envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "schema_version",
+    "trace_id",
+    "run_id",
+    "revision_id",
+    "sequence",
+    "occurred_at",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "event_type": {"type": "string", "minLength": 1},
+    "schema_version": {"const": 1},
+    "trace_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "revision_id": {"type": "string", "minLength": 1},
+    "sequence": {"type": "integer", "minimum": 0},
+    "occurred_at": {"type": "string", "minLength": 1},
+    "payload": {"type": "object"}
+  }
+}

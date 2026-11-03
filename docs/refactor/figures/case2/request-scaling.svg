@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">请求量增加后的排队与事件规模</title>
+  <desc id="desc">固定每副本单请求执行模型，比较请求数对时延和仿真事件总数的影响。</desc>
+  <rect x="0" y="0" width="1000" height="520" rx="0" fill="#f3f6f8" stroke="none" stroke-width="0" opacity="1"/>
+  <text x="56" y="58" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="27" font-weight="700" fill="#18364f" text-anchor="start">请求量增加后的排队与事件规模</text>
+  <text x="56" y="83" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#c76823" text-anchor="start">Qwen2.5-7B TP 案例 | 数据来源 SYNTHETIC | 不是 GPU 实测</text>
+  <line x1="56" y1="105" x2="944" y2="105" stroke="#d8e1e6" stroke-width="1"/>
+  <text x="105" y="138" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#18364f" text-anchor="start">时延随请求量变化</text>
+<text x="590" y="138" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#18364f" text-anchor="start">仿真器处理事件数</text>
+<line x1="105" y1="165" x2="425" y2="165" stroke="#d8e1e6" stroke-width="1"/>
+<line x1="590" y1="165" x2="910" y2="165" stroke="#d8e1e6" stroke-width="1"/>
+<text x="93" y="169" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">500</text>
+<text x="578" y="169" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">20.0</text>
+<line x1="105" y1="221.25" x2="425" y2="221.25" stroke="#d8e1e6" stroke-width="1"/>
+<line x1="590" y1="221.25" x2="910" y2="221.25" stroke="#d8e1e6" stroke-width="1"/>
+<text x="93" y="225.25" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">375</text>
+<text x="578" y="225.25" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">15.0</text>
+<line x1="105" y1="277.5" x2="425" y2="277.5" stroke="#d8e1e6" stroke-width="1"/>
+<line x1="590" y1="277.5" x2="910" y2="277.5" stroke="#d8e1e6" stroke-width="1"/>
+<text x="93" y="281.5" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">250</text>
+<text x="578" y="281.5" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">10.0</text>
+<line x1="105" y1="333.75" x2="425" y2="333.75" stroke="#d8e1e6" stroke-width="1"/>
+<line x1="590" y1="333.75" x2="910" y2="333.75" stroke="#d8e1e6" stroke-width="1"/>
+<text x="93" y="337.75" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">125</text>
+<text x="578" y="337.75" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">5.0</text>
+<line x1="105" y1="390" x2="425" y2="390" stroke="#d8e1e6" stroke-width="1"/>
+<line x1="590" y1="390" x2="910" y2="390" stroke="#d8e1e6" stroke-width="1"/>
+<text x="93" y="394" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">0</text>
+<text x="578" y="394" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="end">0.0</text>
+<text x="105" y="418" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="middle">2</text>
+<text x="590" y="418" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="middle">2</text>
+<text x="265" y="418" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="middle">4</text>
+<text x="750" y="418" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="middle">4</text>
+<text x="425" y="418" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="middle">8</text>
+<text x="910" y="418" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#233a4c" text-anchor="middle">8</text>
+<polyline points="105,370.07324774399996 265,353.1111674880004 425,319.1870069760002" fill="none" stroke="#087f8c" stroke-width="3"/>
+<circle cx="105" cy="370.07324774399996" r="5" fill="#087f8c"/>
+<text x="113" y="358.07324774399996" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#087f8c" text-anchor="start">44.3</text>
+<circle cx="265" cy="353.1111674880004" r="5" fill="#087f8c"/>
+<text x="265" y="341.1111674880004" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#087f8c" text-anchor="middle">82.0</text>
+<circle cx="425" cy="319.1870069760002" r="5" fill="#087f8c"/>
+<text x="417" y="307.1870069760002" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#087f8c" text-anchor="end">157.4</text>
+<polyline points="105,356.0758394880002 265,322.1516789760011 425,254.30335795199758" fill="none" stroke="#c76823" stroke-width="3"/>
+<circle cx="105" cy="356.0758394880002" r="5" fill="#c76823"/>
+<text x="113" y="376.0758394880002" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#c76823" text-anchor="start">75.4</text>
+<circle cx="265" cy="322.1516789760011" r="5" fill="#c76823"/>
+<text x="265" y="310.1516789760011" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#c76823" text-anchor="middle">150.8</text>
+<circle cx="425" cy="254.30335795199758" r="5" fill="#c76823"/>
+<text x="417" y="242.30335795199758" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#c76823" text-anchor="end">301.5</text>
+<rect x="573" y="339.555" width="34" height="50.44499999999999" rx="3" fill="#69b9c0" stroke="none" stroke-width="0" opacity="1"/>
+<text x="590" y="327.555" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#18364f" text-anchor="middle">4484</text>
+<rect x="733" y="289.11" width="34" height="100.88999999999999" rx="3" fill="#69b9c0" stroke="none" stroke-width="0" opacity="1"/>
+<text x="750" y="277.11" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#18364f" text-anchor="middle">8968</text>
+<rect x="893" y="188.22" width="34" height="201.78" rx="3" fill="#69b9c0" stroke="none" stroke-width="0" opacity="1"/>
+<text x="910" y="176.22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#18364f" text-anchor="middle">17936</text>
+<line x1="250" y1="136" x2="278" y2="136" stroke="#087f8c" stroke-width="3"/>
+<text x="286" y="141" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#233a4c" text-anchor="start">平均 TTFT</text>
+<line x1="385" y1="136" x2="413" y2="136" stroke="#c76823" stroke-width="3"/>
+<text x="421" y="141" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#233a4c" text-anchor="start">最后完成</text>
+<text x="105" y="459" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="13" font-weight="400" fill="#617385" text-anchor="start">横轴均为请求数。事件数来自仿真器统计；单次墙钟不用于统计显著性。</text>
+  <text x="56" y="490" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="11" font-weight="400" fill="#617385" text-anchor="start">证据：team_1103_tp_extra/request_count_*；事件数不是 GPU 数量扩展性。</text>
+</svg>

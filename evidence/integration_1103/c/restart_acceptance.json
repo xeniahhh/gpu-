@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "task": "C",
+  "scope": "same state directory after coordinator restart",
+  "tested_at": "2026-11-03T02:42:55.949402+00:00",
+  "base_url": "http://127.0.0.1:8766",
+  "accepted_run_id": "sim-bd6a2b8e424d45139c61411e57ed5f50",
+  "interrupted_run_id": "sim-task-c-interrupted",
+  "checks": [
+    {
+      "name": "completed_record_survives_restart",
+      "passed": true,
+      "detail": "completed input, hash, and result remain queryable after process restart",
+      "actual": {
+        "status": "completed",
+        "input_hash": "6e2aa0042c387ae3d313d0f9f6e43c40ed067f1646f17425a543cfcd430cb2ea",
+        "has_result": true
+      }
+    },
+    {
+      "name": "unfinished_record_marked_interrupted",
+      "passed": true,
+      "detail": "a pre-existing running row becomes interrupted on coordinator startup",
+      "actual": {
+        "status": "interrupted",
+        "error": "Coordinator restarted; automatic continuation is not implemented"
+      }
+    },
+    {
+      "name": "restart_records_are_listed",
+      "passed": true,
+      "detail": "both completed and interrupted records remain discoverable",
+      "actual": {
+        "accepted_listed": true,
+        "interrupted_listed": true
+      }
+    }
+  ],
+  "passed": true,
+  "notes": [
+    "The interrupted probe represents a run present before restart.",
+    "The service persists evidence but does not provide a durable execution queue.",
+    "Completed simulation success remains distinct from business job success."
+  ]
+}

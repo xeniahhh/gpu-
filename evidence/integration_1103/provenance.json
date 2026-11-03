@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-03T04:15:00Z",
+  "project": "FabricSandbox v2",
+  "implementation_hash": "d844734439ed524fe81d843d0065a17510ebf161c5efc036f31cf4bb061cd4e3",
+  "contributors": [
+    {
+      "id": "A",
+      "name": "熊宇琛",
+      "role": "模型与通信语义、真实 GPU 测量、最终技术核验",
+      "status": "COMPLETE",
+      "source_class": "MEASURED + DERIVED + SYNTHETIC",
+      "headline": "两张 RTX 3090 的 GPT-2 profile 与梯度 AllReduce 已完成",
+      "metrics": [
+        {
+          "label": "GPT-2 参数",
+          "value": "124,439,808",
+          "source": "DERIVED"
+        },
+        {
+          "label": "FP32 梯度",
+          "value": "497,759,232 bytes",
+          "source": "DERIVED"
+        },
+        {
+          "label": "前向+反向中位数",
+          "value": "34.487 ms",
+          "source": "MEASURED"
+        },
+        {
+          "label": "优化器中位数",
+          "value": "15.213 ms",
+          "source": "MEASURED"
+        },
+        {
+          "label": "两卡 AllReduce 中位数",
+          "value": "83.206 ms",
+          "source": "MEASURED"
+        },
+        {
+          "label": "归一化总线带宽",
+          "value": "5.982 GB/s",
+          "source": "MEASURED"
+        }
+      ],
+      "environment": {
+        "gpu": "2 x NVIDIA GeForce RTX 3090",
+        "python": "3.12.15",
+        "torch": "2.7.1+cu128",
+        "cuda_runtime": "12.8",
+        "topology": "same NUMA node; not cross-rack"
+      },
+      "evidence": [
+        "a/summary.json",
+        "a/handoff.txt",
+        "a/gpt2_profile.json",
+        "a/allreduce_gradient.json"
+      ],
+      "boundaries": [
+        "单卡 profile 与独立 AllReduce 不能相加冒充多卡 DDP 步时。",
+        "两卡同 NUMA 结果不能校准跨机架网络。"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "马贤纯",
+      "role": "网络、资源实验、故障分析、规模与敏感性",
+      "status": "COMPLETE",
+      "source_class": "SYNTHETIC",
+      "headline": "19/19 个仿真情景复现通过，178 项测试通过",
+      "metrics": [
+        {
+          "label": "DDP 基线",
+          "value": "19/19 PASS",
+          "source": "SIMULATION"
+        },
+        {
+          "label": "自动化测试",
+          "value": "178/178 PASS",
+          "source": "LOCAL TEST"
+        },
+        {
+          "label": "独占 -> 并发",
+          "value": "7,137.466 -> 10,721.333 ms",
+          "source": "SYNTHETIC"
+        },
+        {
+          "label": "成组准入等待",
+          "value": "4,743.742 ms",
+          "source": "SYNTHETIC"
+        },
+        {
+          "label": "DDP 带宽扩展",
+          "value": "25 / 50 / 100 Gbps",
+          "source": "SYNTHETIC"
+        },
+        {
+          "label": "DDP 步数扩展",
+          "value": "10 / 20 / 30 / 40",
+          "source": "SYNTHETIC"
+        }
+      ],
+      "environment": {
+        "platform": "Windows 10 Pro",
+        "python": "3.12.10",
+        "gpu_participation": "none"
+      },
+      "evidence": [
+        "b/environment.md",
+        "b/baseline_summary.json",
+        "b/network_and_contention.md",
+        "b/admission_and_fault.md",
+        "b/scaling.md",
+        "b/ddp_extra_summary.csv"
+      ],
+      "boundaries": [
+        "带宽和训练完成时间来自合成事件仿真。",
+        "单次程序墙钟不用于统计显著性。"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "王忻晔",
+      "role": "接口、权限、持久化、TP 第二案例、前端与交付验收",
+      "status": "CORE_VALIDATED",
+      "source_class": "HTTP + BROWSER + SYNTHETIC",
+      "headline": "真实 HTTP、浏览器、权限、快照和重启验收完成",
+      "metrics": [
+        {
+          "label": "完整测试",
+          "value": "180/180 PASS",
+          "source": "LOCAL TEST"
+        },
+        {
+          "label": "HTTP 验收",
+          "value": "16/16 PASS",
+          "source": "LOCAL HTTP"
+        },
+        {
+          "label": "重启验收",
+          "value": "3/3 PASS",
+          "source": "LOCAL SQLITE"
+        },
+        {
+          "label": "TP 代表场景",
+          "value": "9/9 PASS",
+          "source": "SIMULATION"
+        },
+        {
+          "label": "TP 扩展实验",
+          "value": "6/6 PASS",
+          "source": "SIMULATION"
+        },
+        {
+          "label": "浏览器验收",
+          "value": "DDP + TP",
+          "source": "EDGE"
+        },
+        {
+          "label": "只读解释",
+          "value": "证据引用，不改结果",
+          "source": "RULES-BASED"
+        }
+      ],
+      "environment": {
+        "python": "3.13.12",
+        "browser": "Microsoft Edge 156",
+        "service": "127.0.0.1"
+      },
+      "evidence": [
+        "http_acceptance.json",
+        "browser_integrated.json",
+        "browser_integrated.png",
+        "c/http_acceptance.json",
+        "c/restart_acceptance.json",
+        "c/tp_http_acceptance.json",
+        "c/tp_browser_acceptance.json"
+      ],
+      "boundaries": [
+        "C 的 Git URL、最终提交号和现场录屏仍待团队完成。",
+        "viewer/editor 是共享角色，不是个人账户或多租户隔离。"
+      ]
+    }
+  ],
+  "shared_boundaries": [
+    "Web 和 API 的证据来自真实本机服务；仿真性能不是 GPU 实测。",
+    "DDP/TP 网络参数、恢复时间和 Qwen profile 仍包含 SYNTHETIC 输入。",
+    "所有运行必须绑定同一 implementation_hash，不能混用旧结果。"
+  ]
+}

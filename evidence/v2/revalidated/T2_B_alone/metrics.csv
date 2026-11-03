@@ -1,0 +1,2 @@
+﻿id,arrival_ms,prompt_tokens,max_new_tokens,state,reason,replica_id,started_ms,completed_ms,first_token_ms,generated_tokens,token_times_ms,wait_ms,ttft_ms,latency_ms,inter_token_ms,kv_peak_bytes_per_gpu,reserved_kv_bytes_per_gpu,admission_memory_bytes_per_gpu,communication_calls
+request-2,0.0,128,4,completed,,replica-1,0.0,66.97351168000003,36.06083583999997,4,"[36.06083583999997, 46.36506112000011, 56.669286400000246, 66.97351168000003]",0.0,36.06083583999997,66.97351168000003,"[10.30422528000014, 10.30422528000014, 10.304225279999784]",3756032,3784704,9761268352.0,224
