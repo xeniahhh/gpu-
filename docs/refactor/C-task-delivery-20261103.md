@@ -27,6 +27,7 @@
 - 服务重启：3/3 通过，completed 记录保留，未完成任务变为 interrupted。
 - 实现 hash：`d844734439ed524fe81d843d0065a17510ebf161c5efc036f31cf4bb061cd4e3`。
 - 本地 Git 交付标签：`c-delivery-20261103`；标签指向包含全部 C 交付物的固定提交。
+- GitHub 仓库：https://github.com/xeniahhh/gpu-
 
 ## 主要证据
 
@@ -38,8 +39,8 @@
 
 ## 尚未完成
 
-- 将本地标签 `c-delivery-20261103` 对应的提交发布到可访问的 GitHub/GitLab 仓库。
 - 在答辩电脑上重新执行最终启动和接口检查。
+- 从 GitHub 远程仓库做一次干净克隆复验。
 - 录制五分钟演示视频并完成三人排练。
 - 根据最终演示稿再修改 PPT 并冻结。
 

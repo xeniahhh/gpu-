@@ -10,7 +10,7 @@ Project Track：Option 4（须确认原提案获批情况）
 
 Team Members：熊宇琛、马贤纯、王忻晔
 
-Repository Link：［提交前填写 GitHub/GitLab 地址与提交号］
+Repository Link：https://github.com/xeniahhh/gpu-｜tag：`c-delivery-20261103`
 
 ### Executive Summary
 
